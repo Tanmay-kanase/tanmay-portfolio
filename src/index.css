@@ -1,0 +1,70 @@
+@import "tailwindcss";
+/* :root {
+  --bg: #f5f1ea;
+  --bg-2: #efeae0;
+  --fg: #1a1816;
+  --muted: #6b635a;
+  --muted-2: #8b8278;
+  --hair: #e1dacb;
+  --hair-2: #d6cebd;
+  --accent: #b8502e;
+  --accent-ink: #7a3318;
+  --color-accent: var(--accent);
+  --font-geist: "Geist", "Geist Fallback", sans-serif;
+  --font-geist-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+  --font-instrument-serif:
+    "Instrument Serif", "Instrument Serif Fallback", serif;
+
+  --sans:
+    var(--font-geist), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --mono:
+    var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+} */
+
+@theme {
+  --bg: #f5f1ea;
+  --bg-2: #efeae0;
+  --fg: #1a1816;
+  --muted: #6b635a;
+  --muted-2: #8b8278;
+  --hair: #e1dacb;
+  --hair-2: #d6cebd;
+  --accent: #b8502e;
+  --accent-ink: #7a3318;
+  --color-accent: var(--accent);
+  --font-geist: "Geist", "Geist Fallback", sans-serif;
+  --font-geist-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+  --font-instrument-serif:
+    "Instrument Serif", "Instrument Serif Fallback", serif;
+
+  --sans:
+    var(--font-geist), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --mono:
+    var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-feature-settings: "ss01", "cv01";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  margin: 0;
+  padding: 0; /* Let Navbar and Hero handle their own padding */
+  box-sizing: border-box;
+}
+
+@keyframes tzFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: tzFadeIn 1s ease-out forwards;
+}
