@@ -15,9 +15,10 @@ export default function MyLearn() {
             className="m-0 text-[15px] text-muted max-w-[620px]"
             style={{ lineHeight: 1.65 }}
           >
-            A live snapshot of what is moving right now: AI internships,
-            full-stack builds, IoT hardware prototyping, and the current DSA
-            problem solving.
+            Currently focused on building scalable full-stack applications using
+            Spring Boot and React while strengthening my knowledge of System
+            Design, AI Integration, Data Structures & Algorithms, and Database
+            Engineering.
           </p>
           <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted">
             Updated Jun 2026
@@ -33,7 +34,7 @@ export default function MyLearn() {
               className="m-0 font-medium tracking-[-0.02em]"
               style={{ fontSize: "clamp(19px, 2vw, 24px)", lineHeight: 1.15 }}
             >
-              Software Engineer Intern at Sumago Infotech
+              Software Engineer Trainee at Sumago Infotech
             </h3>
             <p
               className="m-0 mt-4 text-sm text-muted"
@@ -53,15 +54,16 @@ export default function MyLearn() {
               className="m-0 font-medium tracking-[-0.02em]"
               style={{ fontSize: "clamp(19px, 2vw, 24px)", lineHeight: 1.15 }}
             >
-              Mastering Full Stack & Problem Solving
+              Mastering Full Stack & Problem Solving by Excelr Edtech
             </h3>
             <p
               className="m-0 mt-4 text-sm text-muted"
               style={{ lineHeight: 1.65 }}
             >
-              Maintaining a 100-day LeetCode streak in C++ to strengthen
-              optimization skills, alongside deploying complete architectures
-              using MERN, Spring Boot, and ASP.NET MVC 5 with SQL Server.
+              Gained practical experience in full-stack web development,
+              database management, and API design. Enhanced problem-solving
+              abilities through coding challenges, data structures, algorithms,
+              and project-based learning using industry-standard technologies.
             </p>
           </article>
         </div>
@@ -196,7 +198,7 @@ export default function MyLearn() {
             style={{ gridColumn: "span 4 / span 4" }}
           >
             <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-accent block mb-4">
-              Full Stack
+              Full Stack Web + Android on same backend (Spring boot)
             </span>
             <div className="flex-1 flex flex-col justify-between gap-8">
               <div>

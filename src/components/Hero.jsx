@@ -26,18 +26,20 @@ const Hero = () => {
                 letterSpacing: "-0.045em",
               }}
             >
-              <span className="block">BackendEngineer.</span>
+              <span className="block">Backend Engineer.</span>
               <span className="block">Full-Stack Developer.</span>
               <span className="text-[#b8502e] block mt-2">Problem Solver.</span>
             </h1>
 
             <p
               className="m-0 mt-6 text-muted max-w-[560px]"
-              style={{ fontSize: "clamp(16px, 1.7vw, 19px)", lineHeight: 1.6 }}
+              style={{ fontSize: "clamp(16px, 1.2vw, 19px)", lineHeight: 1.6 }}
             >
-              Passionate about building scalable backend systems, real-time
-              applications using Spring Boot, React, MongoDB, Redis, WebSockets,
-              and modern cloud technologies.
+              BE Computer Engineering undergraduate with hands-on experience in
+              full-stack and backend development through academic projects,
+              internship experience, and professional training. Proficient in
+              Java, Spring Boot, React, REST APIs, and database management, with
+              a strong foundation in software development.
             </p>
           </div>
 
@@ -59,7 +61,7 @@ const Hero = () => {
                   <div className="text-[clamp(22px,2.5vw,28px)] font-medium tracking-[-0.02em] leading-none text-fg">
                     03
                   </div>
-                  <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted mt-[6px] block">
+                  <span className="font-mono font-bold text-accent text-[11px] tracking-[0.08em] uppercase text-muted mt-[6px] block">
                     Years Coding
                   </span>
                 </div>
@@ -68,7 +70,7 @@ const Hero = () => {
                   <div className="text-[clamp(22px,2.5vw,28px)] font-medium tracking-[-0.02em] leading-none text-fg">
                     300+
                   </div>
-                  <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted mt-[6px] block">
+                  <span className="font-mono font-bold text-accent text-[11px] tracking-[0.08em] uppercase text-muted mt-[6px] block">
                     Github Commits
                   </span>
                 </div>
@@ -77,7 +79,7 @@ const Hero = () => {
                   <div className="text-[clamp(22px,2.5vw,28px)] font-medium tracking-[-0.02em] leading-none text-fg">
                     8+
                   </div>
-                  <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted mt-[6px] block">
+                  <span className="font-mono font-bold text-accent text-[11px] tracking-[0.08em] uppercase text-muted mt-[6px] block">
                     Full Stack Projects
                   </span>
                 </div>

@@ -21,7 +21,7 @@ const Navbar = () => {
       >
         {/* MATCHED ALIGNMENT: Using max-w-6xl and px-4 just like the Hero section */}
         <div
-          className="max-w-6xl mx-auto px-4 flex items-center justify-between w-full"
+          className="max-w-8xl mx-auto px-4 flex items-center justify-between w-full"
           style={{ height: "64px" }}
         >
           {/* Brand & Avatar */}
@@ -57,7 +57,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="nav-desktop hidden md:flex gap-0.5">
             <a
-              className="relative text-sm tracking-[-0.005em]"
+              className="relative text-sm tracking-[-0.005em] hover:border-b-2 border-b-accent"
               style={{
                 padding: "8px 14px",
                 color: "var(--muted)",
@@ -68,35 +68,57 @@ const Navbar = () => {
               Internships
             </a>
             <a
-              className="relative text-sm tracking-[-0.005em]"
+              className="relative text-sm tracking-[-0.005em] hover:border-b-2 border-b-accent"
               style={{
                 padding: "8px 14px",
                 color: "var(--muted)",
                 fontWeight: 400,
               }}
-              href="/lab"
+              href="/projects"
             >
               Projects
             </a>
             <a
-              className="relative text-sm tracking-[-0.005em]"
+              className="relative text-sm tracking-[-0.005em] hover:border-b-2 border-b-accent"
               style={{
                 padding: "8px 14px",
                 color: "var(--muted)",
                 fontWeight: 400,
               }}
-              href="/writing"
+              href="/certifications"
+            >
+              Certifications
+            </a>
+            <a
+              className="relative text-sm tracking-[-0.005em] hover:border-b-2 border-b-accent"
+              style={{
+                padding: "8px 14px",
+                color: "var(--muted)",
+                fontWeight: 400,
+              }}
+              href="/education"
+            >
+              Education
+            </a>
+            <a
+              className="relative text-sm tracking-[-0.005em] hover:border-b-2 border-b-accent"
+              style={{
+                padding: "8px 14px",
+                color: "var(--muted)",
+                fontWeight: 400,
+              }}
+              href="/skills"
             >
               Skills
             </a>
             <a
-              className="relative text-sm tracking-[-0.005em]"
+              className="relative text-sm tracking-[-0.005em] hover:border-b-2 border-b-accent"
               style={{
                 padding: "8px 14px",
                 color: "var(--muted)",
                 fontWeight: 400,
               }}
-              href="/life"
+              href="/achievements"
             >
               Achievements
             </a>
@@ -135,7 +157,7 @@ const Navbar = () => {
                 padding: "8px 14px",
                 borderColor: "var(--fg)",
               }}
-              href="/contact?intent=project"
+              href="/contact"
             >
               Get in touch →
             </a>
@@ -201,16 +223,8 @@ const Navbar = () => {
       >
         <a
           className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
-          style={{ color: "var(--accent)" }}
-          href="/"
-          onClick={toggleMobileMenu}
-        >
-          Home
-        </a>
-        <a
-          className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
           style={{ color: "var(--fg)" }}
-          href="/work"
+          href="/"
           onClick={toggleMobileMenu}
         >
           Internships
@@ -218,7 +232,7 @@ const Navbar = () => {
         <a
           className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
           style={{ color: "var(--fg)" }}
-          href="/lab"
+          href="/work"
           onClick={toggleMobileMenu}
         >
           Projects
@@ -226,11 +240,28 @@ const Navbar = () => {
         <a
           className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
           style={{ color: "var(--fg)" }}
+          href="/lab"
+          onClick={toggleMobileMenu}
+        >
+          Certifications
+        </a>
+        <a
+          className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
+          style={{ color: "var(--fg)" }}
           href="/writing"
+          onClick={toggleMobileMenu}
+        >
+          Education
+        </a>
+        <a
+          className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
+          style={{ color: "var(--fg)" }}
+          href="/life"
           onClick={toggleMobileMenu}
         >
           Skills
         </a>
+
         <a
           className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
           style={{ color: "var(--fg)" }}
@@ -247,7 +278,7 @@ const Navbar = () => {
             backgroundColor: "var(--fg)",
             color: "var(--bg)",
           }}
-          href="/contact?intent=project"
+          href="/contact"
           onClick={toggleMobileMenu}
         >
           Get in touch →

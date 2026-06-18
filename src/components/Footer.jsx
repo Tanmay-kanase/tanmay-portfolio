@@ -42,7 +42,7 @@ const Footer = () => {
 
             <div className="mt-5 flex gap-4 flex-wrap">
               <a
-                href="https://linkedin.com/in/tanmaykanase"
+                href="https://www.linkedin.com/in/tanmay-kanase/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-muted pb-0.5"
@@ -61,7 +61,7 @@ const Footer = () => {
               </a>
               {/* Swapped "Book a call" for a LeetCode link since you have a 100-day streak! */}
               <a
-                href="https://leetcode.com/"
+                href="https://leetcode.com/u/Tanmay_Kanase/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-muted pb-0.5"
