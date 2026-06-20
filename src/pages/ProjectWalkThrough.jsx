@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { MdEmail } from "react-icons/md";
+import { useEffect, useState } from "react";
 
 // --- DATA FOR YOUR PROJECTS ---
 const smartParkingSteps = [
@@ -11,15 +10,17 @@ const smartParkingSteps = [
     title: "Smart Parking Search & Filtering",
     desc: "Implemented intelligent search and filtering capabilities, allowing users to quickly locate parking facilities based on location, pricing, availability, and distance.",
     tags: ["Search", "Filtering", "UX"],
+    imageSrc: "parking/Screenshot (619).png",
   },
   {
     id: 2,
-    icon: "📍",
-    shortName: "Locate",
-    badge: "Geospatial Search",
-    title: "Finding Nearby Parking Facilities",
-    desc: "Utilized MongoDB Geospatial Indexing, Google Maps API, and the Haversine Formula. Offloaded distance calculations to client applications, reducing server-side computation overhead by approximately 20% and improving response times.",
-    tags: ["MongoDB Geospatial", "Google Maps API", "Haversine"],
+    icon: "🎫",
+    shortName: "Ticket",
+    badge: "Automation",
+    title: "Digital Ticket & Email Delivery",
+    desc: "Generated booking confirmations and digital parking tickets automatically via email, ensuring a seamless post-payment experience.",
+    tags: ["Email Service", "Ticketing", "Automation"],
+    imageSrc: "parking/Screenshot (628).png",
   },
   {
     id: 3,
@@ -29,6 +30,7 @@ const smartParkingSteps = [
     title: "Redis-based Locking & Caching",
     desc: "Leveraged Redis-based locking mechanisms to prevent race conditions during concurrent parking slot reservations, reducing booking conflicts by approximately 80%.",
     tags: ["Redis", "Concurrency", "Caching"],
+    imageSrc: "parking/image.png",
   },
   {
     id: 4,
@@ -38,15 +40,18 @@ const smartParkingSteps = [
     title: "Secure Payments & Refund Processing",
     desc: "Integrated Razorpay for secure transactions and implemented automated refund workflows for cancelled bookings, improving user trust and operational efficiency.",
     tags: ["Razorpay", "Refunds", "Transactions"],
+    imageSrc: "parking/Screenshot (624).png",
   },
   {
     id: 5,
-    icon: "🎫",
-    shortName: "Ticket",
-    badge: "Automation",
-    title: "Digital Ticket & Email Delivery",
-    desc: "Generated booking confirmations and digital parking tickets automatically via email, ensuring a seamless post-payment experience.",
-    tags: ["Email Service", "Ticketing", "Automation"],
+
+    icon: "📍",
+    shortName: "Locate",
+    badge: "Geospatial Search",
+    title: "Finding Nearby Parking Facilities",
+    desc: "Utilized MongoDB Geospatial Indexing, Google Maps API, and the Haversine Formula. Offloaded distance calculations to client applications, reducing server-side computation overhead by approximately 20% and improving response times.",
+    tags: ["MongoDB Geospatial", "Google Maps API", "Haversine"],
+    imageSrc: "parking/Screenshot (619).png",
   },
   {
     id: 6,
@@ -56,6 +61,7 @@ const smartParkingSteps = [
     title: "QR-Based Verification",
     desc: "Generated unique QR codes for parking verification. Users can scan and authenticate their parking slot securely upon arrival.",
     tags: ["QR Verification", "Flutter", "Spring Boot"],
+    imageSrc: "parking/Screenshot (614).png",
   },
   {
     id: 7,
@@ -77,6 +83,8 @@ const coldStorageSteps = [
     title: "ESP32 Sensor Integration",
     desc: "Engineered a low-overhead communication protocol for ESP32 by replacing complex JSON payloads with lightweight structured messages, reducing parsing latency by 30%.",
     tags: ["ESP32", "Low Latency", "Sensors"],
+    imageSrc: "cold storage/image.png",
+    imageType: "mobile",
   },
   {
     id: 2,
@@ -86,6 +94,8 @@ const coldStorageSteps = [
     title: "WebSocket Communication",
     desc: "Implemented WebSockets and REST APIs for real-time monitoring of temperature, humidity, gas concentration, and relay status.",
     tags: ["WebSockets", "Node.js", "REST API"],
+    imageSrc: "cold storage/Screenshot_20260327_185012.jpg",
+    imageType: "mobile",
   },
   {
     id: 3,
@@ -95,6 +105,8 @@ const coldStorageSteps = [
     title: "Flutter Live Dashboard",
     desc: "Developed a Flutter application backed by MongoDB to view live sensor updates and manage cold storage environments remotely.",
     tags: ["Flutter", "MongoDB", "UI/UX"],
+    imageSrc: "cold storage/Screenshot_20260327_185007.jpg",
+    imageType: "mobile",
   },
   {
     id: 4,
@@ -104,6 +116,8 @@ const coldStorageSteps = [
     title: "AI-Powered Assistant",
     desc: "Integrated an AI assistant capable of answering operational queries, explaining sensor readings, providing troubleshooting guidance, and assisting managers with decision-making.",
     tags: ["AI", "LLM", "Assistant"],
+    imageSrc: "cold storage/Screenshot_20260327_185027.jpg",
+    imageType: "mobile",
   },
   {
     id: 5,
@@ -113,6 +127,8 @@ const coldStorageSteps = [
     title: "Historical Data Analysis",
     desc: "Stored and analyzed environmental data trends to help managers identify inefficiencies, monitor storage conditions, and make data-driven decisions.",
     tags: ["Analytics", "MongoDB", "Reports"],
+    imageSrc: "cold storage/Screenshot_20260327_185054.jpg",
+    imageType: "mobile",
   },
   {
     id: 6,
@@ -122,6 +138,8 @@ const coldStorageSteps = [
     title: "Instant Notification Delivery",
     desc: "Built a reliable alerting mechanism that instantly notifies managers when environmental parameters exceed safe thresholds.",
     tags: ["Alerts", "Reliability", "Notifications"],
+    imageSrc: "cold storage/Screenshot_20260327_185120.jpg",
+    imageType: "mobile",
   },
   {
     id: 7,
@@ -131,9 +149,23 @@ const coldStorageSteps = [
     title: "Remote Relay Management",
     desc: "Enabled remote control of cooling systems and relays directly from the mobile application, allowing operators to respond quickly to changing conditions.",
     tags: ["Automation", "Relay Control", "Remote Access"],
+    imageSrc: "cold storage/Screenshot_20260327_185012.jpg",
+    imageType: "mobile",
   },
 ];
-
+const projectConfig = {
+  parking: {
+    title: "Smart Parking System",
+    description:
+      "Smart Parking System with search, booking, payments, QR verification, Redis locking, geospatial search and Flutter mobile application.",
+  },
+  coldStorage: {
+    title:
+      "Agri Preserve: Smart Cold Storage system for farmers (Final Year Project)",
+    description:
+      "IoT-based cold storage monitoring using ESP32, Flutter, Node.js, MongoDB, WebSockets, AI assistant, analytics and remote relay control.",
+  },
+};
 const ProjectWalkthrough = () => {
   // Use a string to track the active project type
   const [activeProject, setActiveProject] = useState("parking"); // "parking" or "coldStorage"
@@ -158,13 +190,21 @@ const ProjectWalkthrough = () => {
     setActiveProject(projectType);
     setActiveStepId(1); // Reset to the first step when switching projects
   };
+  const projectInfo = projectConfig[activeProject];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStepId((prev) => (prev === totalSteps ? 1 : prev + 1));
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [totalSteps, activeProject]);
   return (
     <section
       className="py-20 border-t border-hair"
       style={{ padding: "56px 0" }}
     >
-      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         {/* Header Navigation */}
         <div className="flex gap-[18px] items-baseline mb-10 overflow-x-auto pb-2 scrollbar-hide">
           <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-muted-2 whitespace-nowrap">
@@ -178,7 +218,7 @@ const ProjectWalkthrough = () => {
                 : "text-muted hover:text-fg"
             }`}
           >
-            Smart Parking System
+            Smart Parking System (Web + Android)
           </button>
           <span className="text-muted-2">/</span>
           <button
@@ -189,7 +229,7 @@ const ProjectWalkthrough = () => {
                 : "text-muted hover:text-fg"
             }`}
           >
-            Smart Cold Storage
+            Agri Preserve: Cold Storage System for farmers.
           </button>
         </div>
 
@@ -202,7 +242,7 @@ const ProjectWalkthrough = () => {
               letterSpacing: "-0.025em",
             }}
           >
-            System workflow walkthrough
+            {projectInfo.title}
           </h2>
           <p
             className="text-muted max-w-[620px]"
@@ -212,9 +252,7 @@ const ProjectWalkthrough = () => {
               lineHeight: "1.7",
             }}
           >
-            A step-by-step breakdown of how the cross-platform application
-            handles everything from architecture setup to deployment and access
-            management.
+            {projectInfo.description}
           </p>
         </div>
 
@@ -364,22 +402,19 @@ const ProjectWalkthrough = () => {
                 {/* Right image column */}
                 <div className="flex items-center justify-center">
                   <div
-                    className="border border-hair overflow-hidden w-full max-w-[320px] rounded-md bg-bg-2 flex items-center justify-center"
-                    style={{ minHeight: "220px" }}
+                    className="border border-hair overflow-hidden rounded-md bg-bg-2 flex items-center justify-center"
+                    style={{ minHeight: "100px" }}
                   >
-                    {activeStep.imageSrc ? (
+                    {activeStep.imageSrc && (
                       <img
                         src={activeStep.imageSrc}
                         alt={activeStep.title}
-                        className="w-full h-auto object-cover"
+                        className={
+                          activeStep.imageType === "mobile"
+                            ? "max-w-[350px] w-full h-[400px] object-contain mx-auto"
+                            : "w-full h-auto object-cover"
+                        }
                       />
-                    ) : (
-                      <div className="text-center p-6 text-muted-2">
-                        <div className="text-2xl mb-2">📸</div>
-                        <span className="font-mono text-[11px] uppercase tracking-widest">
-                          {activeStep.imagePlaceholder}
-                        </span>
-                      </div>
                     )}
                   </div>
                 </div>

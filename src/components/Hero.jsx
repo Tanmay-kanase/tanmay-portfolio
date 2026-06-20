@@ -1,13 +1,13 @@
 const Hero = () => {
   return (
-    <section className="py-10 md:py-20 pb-[80px] ">
-      {/* Changed 'container' to 'max-w-6xl' to constrain the width on large screens */}
+    <section className="py-10 md:py-20 pb-[80px] overflow-hidden">
+      {" "}
+      {/* Added overflow-hidden to prevent accidental 1-2px shifting */}
       <div className="max-w-6xl mx-auto px-4">
-        {/* Main Grid: Reduced the gap on large screens to bring elements closer */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Column: Text Content */}
           <div>
-            <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted inline-flex items-center">
+            <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted inline-flex items-center break-words">
               <span className="relative inline-block w-2 h-2 mr-2 align-middle shrink-0">
                 <span className="absolute inset-0 bg-red-600 rounded-full"></span>
                 <span
@@ -21,7 +21,7 @@ const Hero = () => {
             <h1
               className="mt-8 font-sans font-medium text-fg"
               style={{
-                fontSize: "clamp(40px, 5vw, 64px)",
+                fontSize: "clamp(32px, 8vw, 64px)", // Reduced minimum from 40px to 32px to fit mobile devices
                 lineHeight: 0.94,
                 letterSpacing: "-0.045em",
               }}
@@ -44,9 +44,10 @@ const Hero = () => {
           </div>
 
           {/* Right Column: Avatar Image & Stats */}
-          <div className="pb-3 flex flex-col items-center">
+          <div className="pb-3 flex flex-col items-center w-full max-w-full">
+            {" "}
+            {/* Ensure it doesn't break out of grid */}
             <div className="flex flex-col mb-7 w-full items-center">
-              {/* Image Container: Reduced heights and added a fade-out mask at the bottom */}
               <div className="relative w-full md:w-3/4 h-[250px] md:h-[350px]">
                 <img
                   alt="Tanmay Kanase"
@@ -55,8 +56,9 @@ const Hero = () => {
                 />
               </div>
 
-              {/* Stats Row: Centered tightly under the image */}
-              <div className="mt-6 flex justify-center gap-8 flex-wrap animate-fade-in w-full">
+              <div className="mt-6 flex justify-center gap-4 sm:gap-8 flex-wrap animate-fade-in w-full">
+                {" "}
+                {/* Reduced mobile gap to 4 */}
                 <div className="min-w-20 text-center">
                   <div className="text-[clamp(22px,2.5vw,28px)] font-medium tracking-[-0.02em] leading-none text-fg">
                     03
@@ -65,7 +67,6 @@ const Hero = () => {
                     Years Coding
                   </span>
                 </div>
-
                 <div className="min-w-20 text-center">
                   <div className="text-[clamp(22px,2.5vw,28px)] font-medium tracking-[-0.02em] leading-none text-fg">
                     300+
@@ -74,7 +75,6 @@ const Hero = () => {
                     Github Commits
                   </span>
                 </div>
-
                 <div className="min-w-20 text-center">
                   <div className="text-[clamp(22px,2.5vw,28px)] font-medium tracking-[-0.02em] leading-none text-fg">
                     8+

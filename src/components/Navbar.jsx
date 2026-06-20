@@ -11,7 +11,7 @@ const Navbar = () => {
     <>
       {/* Sticky Header Container */}
       <div
-        className="sticky top-0 z-40 transition-colors duration-200"
+        className="sticky top-0 z-40 w-full transition-colors duration-200" // FIX 1: Added w-full to ensure the background stretches properly
         style={{
           background: "var(--bg)",
           backdropFilter: "none",
@@ -19,13 +19,15 @@ const Navbar = () => {
           transition: "border-color .2s, background .2s",
         }}
       >
-        {/* MATCHED ALIGNMENT: Using max-w-6xl and px-4 just like the Hero section */}
+        {/* KEPT max-w-8xl as requested for desktop nav items */}
         <div
           className="max-w-8xl mx-auto px-4 flex items-center justify-between w-full"
           style={{ height: "64px" }}
         >
           {/* Brand & Avatar */}
-          <a className="flex items-center gap-[10px]" href="/">
+          <a className="flex items-center gap-[10px] min-w-0" href="/">
+            {" "}
+            {/* Added min-w-0 to allow child truncation if needed */}
             <div
               className="size-8 rounded-full overflow-hidden shrink-0"
               style={{ border: "1.5px solid var(--hair-2)" }}
@@ -41,13 +43,14 @@ const Navbar = () => {
               />
             </div>
             <span
-              className="text-sm font-medium tracking-[-0.005em]"
+              className="text-sm font-medium tracking-[-0.005em] shrink-0"
               style={{ color: "var(--fg)" }}
             >
               Tanmay Kanase
             </span>
+            {/* FIX 2: Added "hidden sm:inline-block" to hide this extra text on mobile, preventing the horizontal stretch */}
             <span
-              className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted nav-time"
+              className="hidden sm:inline-block font-mono text-[11px] tracking-[0.08em] uppercase text-muted nav-time"
               style={{ marginLeft: "6px", color: "var(--muted)" }}
             >
               FSD | Software Engineer
@@ -55,7 +58,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="nav-desktop hidden md:flex gap-0.5">
+          <nav className="nav-desktop hidden lg:block gap-0.5">
             <a
               className="relative text-sm tracking-[-0.005em] hover:border-b-2 border-b-accent"
               style={{
@@ -165,7 +168,7 @@ const Navbar = () => {
 
           {/* Mobile Hamburger Button */}
           <button
-            className="nav-hamburger md:hidden flex flex-col gap-[5px] cursor-pointer p-2 bg-transparent border-none"
+            className="nav-hamburger lg:hidden flex flex-col gap-[5px] cursor-pointer p-2 bg-transparent border-none shrink-0" // FIX 3: Added shrink-0 so it doesn't get squished
             aria-label="Menu"
             onClick={toggleMobileMenu}
           >
@@ -208,12 +211,12 @@ const Navbar = () => {
       <div
         className="nav-mobile-menu"
         style={{
-          display: isMobileMenuOpen ? "flex" : "none", // Toggles visibility based on state
+          display: isMobileMenuOpen ? "flex" : "none",
           flexDirection: "column",
           gap: 0,
           padding: "24px",
           position: "fixed",
-          inset: "64px 0 0", // Starts exactly below the 64px header
+          inset: "64px 0 0",
           background: "var(--bg)",
           zIndex: 39,
           borderTop: "1px solid var(--hair)",
@@ -261,7 +264,6 @@ const Navbar = () => {
         >
           Skills
         </a>
-
         <a
           className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
           style={{ color: "var(--fg)" }}

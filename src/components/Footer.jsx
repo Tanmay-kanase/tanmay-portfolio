@@ -2,18 +2,16 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="border-t border-hair bg-bg-2"
+      className="border-t border-hair bg-bg-2 overflow-hidden"
       style={{ padding: "96px 0 48px" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          className="footer-cta-grid grid gap-16 items-end mb-20"
-          style={{ gridTemplateColumns: "1.2fr 1fr" }}
-        >
+        {/* Replaced inline grid style with grid-cols-1 for mobile, lg:grid-cols for desktop */}
+        <div className="footer-cta-grid grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-end mb-20">
           <h2
-            className="footer-h2 m-0 font-medium"
+            className="footer-h2 m-0 font-medium break-words" // Added break-words
             style={{
-              fontSize: "clamp(44px, 6vw, 88px)",
+              fontSize: "clamp(36px, 8vw, 88px)", // Dropped minimum clamp size slightly for mobile fit
               letterSpacing: "-0.035em",
               lineHeight: 0.98,
             }}
@@ -23,7 +21,7 @@ const Footer = () => {
             Let's talk about it.
           </h2>
 
-          <div>
+          <div className="w-full">
             <p
               className="m-0 text-muted max-w-[360px]"
               style={{ fontSize: "16px", lineHeight: 1.65 }}
@@ -34,7 +32,7 @@ const Footer = () => {
             </p>
             <a
               href="mailto:tanmaykanase07@gmail.com"
-              className="inline-block mt-6 border-b border-fg pb-1"
+              className="inline-block mt-6 border-b border-fg pb-1 break-all sm:break-normal" // Stop email from blowing out narrow screens
               style={{ fontSize: "clamp(15px, 1.5vw, 18px)" }}
             >
               tanmaykanase07@gmail.com →
@@ -59,7 +57,6 @@ const Footer = () => {
               >
                 GitHub ↗
               </a>
-              {/* Swapped "Book a call" for a LeetCode link since you have a 100-day streak! */}
               <a
                 href="https://leetcode.com/u/Tanmay_Kanase/"
                 target="_blank"
@@ -73,10 +70,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div
-          className="footer-links-grid grid gap-8 pt-8 border-t border-hair"
-          style={{ gridTemplateColumns: "2fr 1fr 1fr 1fr" }}
-        >
+        {/* Replaced inline grid style with responsive Tailwind grid classes */}
+        <div className="footer-links-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 pt-8 border-t border-hair">
           <div>
             <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted">
               © 2026 Tanmay Kanase
