@@ -13,7 +13,7 @@ const Certifications = () => {
       description:
         "Comprehensive certification covering core Java concepts, object-oriented programming principles, and advanced features.",
       date: "Recent",
-      imageUrl: "/path/to/your/java-certificate.jpg", // Replace with your actual image path
+      imageUrl: "NPTEL24CS43S106230227330765419_page-0001.jpg", // Replace with your actual image path
       link: "#",
     },
     {
@@ -24,7 +24,7 @@ const Certifications = () => {
       description:
         "In-depth study of cloud architectures, deployment models, distributed systems, and prominent cloud service providers.",
       date: "Recent",
-      imageUrl: "/path/to/your/cloud-certificate.jpg", // Replace with your actual image path
+      imageUrl: "NPTEL24CS118S95350087704355381_page-0001.jpg", // Replace with your actual image path
       link: "#",
     },
     {
@@ -37,6 +37,18 @@ const Certifications = () => {
       date: "Recent",
       imageUrl: "/path/to/your/fullstack-certificate.jpg", // Replace with your actual image path
       link: "#",
+    },
+    {
+      id: 4,
+      status: "Completed",
+      provider: "Udemy , Instructor: Deepak Dubey",
+      title: "AWS Certified Developer Associate - Theory + Hands-On + Exam",
+      description:
+        "Develop and optimize cloud-native applications using AWS services, APIs, CLI, and SDKsImplement robust security measures for AWS applications, including authentication, authorization, and encryptionDeploy applications on AWS using CI/CD pipelines, Infrastructure as Code, and various deployment strategiesTroubleshoot and optimize AWS applications using logging, monitoring, and observability too",
+      date: "Recent",
+      imageUrl:
+        "https://udemy-certificate.s3.amazonaws.com/image/UC-374196e9-d031-445e-a1b1-51cc951c7d49.jpg", // Replace with your actual image path
+      link: "https://www.udemy.com/certificate/UC-374196e9-d031-445e-a1b1-51cc951c7d49/#",
     },
   ];
 
@@ -58,6 +70,8 @@ const Certifications = () => {
             <div
               key={cert.id}
               className="border-b border-hair py-6 relative group"
+              onMouseEnter={() => setHoveredId(cert.id)}
+              onMouseLeave={() => setHoveredId(null)}
             >
               <div className="flex justify-between gap-4 items-center mb-3 flex-wrap">
                 <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-muted-2">
@@ -68,20 +82,12 @@ const Certifications = () => {
               <div
                 className="py-[26px] cursor-pointer transition-colors duration-200 relative"
                 style={{ background: "transparent" }}
-                onMouseEnter={() => setHoveredId(cert.id)}
-                onMouseLeave={() => setHoveredId(null)}
               >
                 {/* Mobile Layout */}
                 <div className="flex flex-col gap-2 md:hidden">
                   <div className="flex items-center gap-3">
-                    <span
-                      className="size-[6px] rounded-full shrink-0"
-                      style={{ background: "var(--muted-2)" }}
-                    ></span>
-                    <span
-                      className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted"
-                      style={{ color: "var(--muted-2)" }}
-                    >
+                    <span className="size-[6px] rounded-full shrink-0 bg-green-600"></span>
+                    <span className="font-mono text-green-400 text-[11px] tracking-[0.08em] uppercase ">
                       {cert.status}
                     </span>
                     <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-muted-2">
@@ -105,14 +111,8 @@ const Certifications = () => {
                   style={{ gridTemplateColumns: "110px 130px 1fr 20px" }}
                 >
                   <div className="flex items-center gap-[6px] pt-0.5">
-                    <span
-                      className="size-[6px] rounded-full shrink-0"
-                      style={{ background: "var(--muted-2)" }}
-                    ></span>
-                    <span
-                      className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted"
-                      style={{ color: "var(--muted-2)" }}
-                    >
+                    <span className="size-[6px] rounded-full shrink-0 bg-green-600"></span>
+                    <span className="font-mono text-green-600 text-[11px] tracking-[0.08em] uppercase">
                       {cert.status}
                     </span>
                   </div>
@@ -120,17 +120,27 @@ const Certifications = () => {
                     {cert.provider}
                   </span>
                   <div className="pr-32">
-                    {" "}
-                    {/* Added padding-right to avoid text overlapping the image */}
                     <div
                       className="font-medium tracking-[-0.015em] mb-1"
                       style={{ fontSize: "clamp(15px, 1.6vw, 18px)" }}
                     >
                       {cert.title}
                     </div>
+
                     <div className="text-sm text-muted leading-[1.5]">
                       {cert.description}
                     </div>
+
+                    {hoveredId === cert.id && (
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-3 text-sm border border-hair px-3 py-2"
+                      >
+                        View Certificate ↗
+                      </a>
+                    )}
                   </div>
                   <div
                     className="text-sm pt-0.5 transition-[color,transform] duration-200"
@@ -155,20 +165,6 @@ const Certifications = () => {
                   />
                 </div>
               </div>
-
-              {/* Optional Links (e.g., Verify Certificate) */}
-              {cert.link && hoveredId === cert.id && (
-                <div className="mt-4 flex flex-wrap gap-3 md:ml-[247px] absolute z-30 bottom-8">
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border border-hair bg-bg-2 px-4 py-3 text-sm text-fg hover:bg-hair transition-colors duration-200"
-                  >
-                    Verify Certificate ↗
-                  </a>
-                </div>
-              )}
             </div>
           ))}
         </div>

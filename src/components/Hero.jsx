@@ -80,7 +80,7 @@ const Hero = () => {
                     8+
                   </div>
                   <span className="font-mono font-bold text-accent text-[11px] tracking-[0.08em] uppercase text-muted mt-[6px] block">
-                    Full Stack Projects
+                    Full Stack Projects worked
                   </span>
                 </div>
               </div>

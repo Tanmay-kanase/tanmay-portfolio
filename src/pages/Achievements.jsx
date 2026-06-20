@@ -12,7 +12,7 @@ const achievementsData = [
       "Built strong fundamentals in competitive programming, algorithmic thinking, and established a daily habit of consistent problem-solving.",
     impactLabel: "Takeaway",
     // ADD YOUR IMAGE PATHS HERE (e.g., '/images/leetcode-badge.png')
-    images: [""],
+    images: ["image.png"],
   },
   {
     id: 2,
@@ -25,20 +25,20 @@ const achievementsData = [
     impact:
       "Validates my ability to adapt quickly to corporate workflows, collaborate effectively within a team, and deliver reliable features under tight deadlines.",
     impactLabel: "Impact",
-    images: [""],
+    images: ["Sumago.jpeg", "1747634590346.jpeg"],
   },
   {
     id: 3,
-    title: "1st Place - Blink Coding Competition",
+    title: "1st Place - Blind Coding Competition",
     subtitle: "College-Level · SGOI College of Engineering",
     description: [
-      'Secured first place in the college-level "Blink Coding" competition.',
+      'Secured first place in the college-level "Blind Coding" competition.',
       "This unique challenge required writing accurate, optimized, and compiling code with the monitor completely turned off, relying solely on mental logic and syntax memory.",
     ],
     impact:
       "Demonstrated strong mental mapping of code structure, deep familiarity with language syntax, and a strong foundation in logic implementation.",
     impactLabel: "Takeaway",
-    images: [""],
+    images: ["1746956683371.jpeg"],
   },
 ];
 

@@ -24,12 +24,12 @@ const Projects = () => {
                 AgriPreserve
               </h4>
               <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted mb-4">
-                BE Final Year Project[cite: 2]
+                BE Final Year Project
               </p>
 
               <div className="flex flex-col gap-2 mt-auto">
                 <span className="font-mono text-[10px] tracking-[0.08em] uppercase text-muted-2">
-                  2025 — Ongoing[cite: 2]
+                  2025 — Ongoing
                 </span>
               </div>
             </div>
@@ -43,7 +43,7 @@ const Projects = () => {
                   lineHeight: 1.15,
                 }}
               >
-                Cold Storage Monitoring System for Farmers[cite: 2]
+                Cold Storage Monitoring System for Farmers
               </h3>
 
               <ul
@@ -52,16 +52,16 @@ const Projects = () => {
               >
                 <li>
                   Built an IoT + Cloud-based cold storage monitoring system
-                  using ESP32 and sensors[cite: 2].
+                  using ESP32 and sensors .
                 </li>
                 <li>
                   Developed a Flutter mobile app paired with a Node.js backend
-                  for real-time monitoring[cite: 2].
+                  for real-time monitoring .
                 </li>
                 <li>
                   Optimized ESP32 API communication using compact encoded
                   payloads with Node.js backend parsing, significantly improving
-                  transmission efficiency on the microcontroller[cite: 2].
+                  transmission efficiency on the microcontroller .
                 </li>
                 <li>
                   Integrated AI models for spoilage prediction, fine-tuning
@@ -103,12 +103,12 @@ const Projects = () => {
                 Smart Parking App
               </h4>
               <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted mb-4">
-                Internship Project[cite: 2]
+                Internship Project
               </p>
 
               <div className="flex flex-col gap-2 mt-auto">
                 <span className="font-mono text-[10px] tracking-[0.08em] uppercase text-muted-2">
-                  2024[cite: 2]
+                  2024
                 </span>
                 <a
                   href="#"
@@ -128,7 +128,7 @@ const Projects = () => {
                   lineHeight: 1.15,
                 }}
               >
-                Cross-Platform Parking Solution[cite: 2]
+                Cross-Platform Parking Solution
               </h3>
 
               <ul
@@ -138,17 +138,17 @@ const Projects = () => {
                 <li>
                   Built a cross-platform smart parking system featuring
                   real-time slot booking, QR verification, and Razorpay
-                  integration[cite: 2].
+                  integration .
                 </li>
                 <li>
                   Engineered the backend using Spring Boot with a GeoSpatial
                   MongoDB database and built the frontend with ReactJS and
-                  Flutter[cite: 2].
+                  Flutter .
                 </li>
                 <li>
                   Implemented a Redis-based distributed slot locking mechanism
                   to prevent race conditions and double booking in concurrent
-                  requests[cite: 2].
+                  requests .
                 </li>
                 <li>
                   Utilized Mermaid.js state diagrams within the React frontend
@@ -190,12 +190,12 @@ const Projects = () => {
                 Misc. Architectures
               </h4>
               <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted mb-4">
-                Full Stack & DevOps[cite: 2]
+                Full Stack & DevOps
               </p>
 
               <div className="flex flex-col gap-2 mt-auto">
                 <span className="font-mono text-[10px] tracking-[0.08em] uppercase text-muted-2">
-                  2022 — 2025[cite: 2]
+                  2022 — 2025
                 </span>
                 <a
                   href="#"
@@ -215,7 +215,7 @@ const Projects = () => {
                   lineHeight: 1.15,
                 }}
               >
-                AI, Real Estate & ERP Systems[cite: 2]
+                AI, Real Estate & ERP Systems
               </h3>
 
               <ul
@@ -225,11 +225,11 @@ const Projects = () => {
                 <li>
                   Developed a MERN-based Real Estate app and multiple
                   mini-projects, gaining hands-on experience with Docker, AWS
-                  (EC2, S3), and GCP APIs[cite: 2].
+                  (EC2, S3), and GCP APIs .
                 </li>
                 <li>
                   Built an AI-powered Quiz App using Angular, TypeScript,
-                  Node.js, and the OpenAI API[cite: 2].
+                  Node.js, and the OpenAI API .
                 </li>
                 <li>
                   Designed and developed a comprehensive Hostel Management

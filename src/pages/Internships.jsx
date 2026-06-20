@@ -111,6 +111,21 @@ const Internships = () => {
                     </p>
                   </div>
                 </div>
+
+                {/* Certificate Block  */}
+                <div className="bg-bg">
+                  <div
+                    className="border border-hair bg-bg transition-colors duration-150 h-full"
+                    style={{ padding: "20px 24px", opacity: 1 }}
+                  >
+                    <div className="flex gap-[10px] items-start mb-2 flex-wrap">
+                      <span className="text-sm font-bold tracking-[-0.01em] text-fg flex-1 min-w-[120px]">
+                        Certificate
+                      </span>
+                    </div>
+                    <img src="1749305761973.jpeg" alt="" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

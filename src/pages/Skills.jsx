@@ -4,51 +4,148 @@ const skillsData = [
   {
     id: 1,
     category: "Languages",
-    title: "Programming Languages",
+    title: "☕ Programming Languages",
     description:
-      "Core programming languages I use for system-level logic, competitive programming, and application development.",
+      "Programming languages used for backend development, problem solving, automation, and system-level programming.",
     proficiency: "Advanced",
-    tags: ["Java", "C", "C++"],
+    tags: ["Java", "C", "C++", "Python", "JavaScript", "TypeScript", "Go"],
   },
   {
     id: 2,
-    category: "Frameworks",
-    title: "Frameworks & Technologies",
+    category: "Backend",
+    title: " ⚙ Backend Development",
     description:
-      "Libraries and frameworks I rely on to build scalable backend services, RESTful APIs, and dynamic user interfaces.",
-    proficiency: "Intermediate",
-    tags: ["Spring Boot", "React", "Node.js", "Express.js", "REST APIs"],
+      "Technologies used to build scalable APIs, microservices, authentication systems, and real-time applications.",
+    proficiency: "Advanced",
+    tags: [
+      "Spring Boot",
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "JWT Authentication",
+      "WebSockets",
+      "Microservices Basics",
+      "API Design",
+    ],
   },
   {
     id: 3,
-    category: "Tools",
-    title: "Tools & Platforms",
+    category: "Frontend",
+    title: "⚛ Frontend Development",
     description:
-      "Version control, containerization, database management, and infrastructure tools used for seamless deployment and development workflows.",
+      "Modern frontend technologies used to create responsive and interactive web applications.",
     proficiency: "Intermediate",
     tags: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Docker",
-      "Linux (Ubuntu)",
-      "Shell Scripting",
-      "Redis",
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Responsive Design",
     ],
   },
   {
     id: 4,
-    category: "Soft Skills",
-    title: "Interpersonal & Soft Skills",
+    category: "Mobile",
+    title: "📱 Mobile Development",
     description:
-      "Non-technical skills that allow me to collaborate effectively in team environments, lead initiatives, and communicate complex ideas clearly.",
-    proficiency: "Professional",
-    tags: ["Communication", "Teamwork", "Leadership", "Collaboration"],
+      "Cross-platform mobile application development and real-time communication integration.",
+    proficiency: "Intermediate",
+    tags: ["Flutter", "Dart", "REST API Integration", "WebSocket Integration"],
+  },
+  {
+    id: 5,
+    category: "Databases",
+    title: "🗄 Databases & Storage",
+    description:
+      "Database technologies for transactional systems, document storage, caching, and data management.",
+    proficiency: "Advanced",
+    tags: [
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "Database Design",
+      "Query Optimization",
+    ],
+  },
+  {
+    id: 6,
+    category: "Cloud & DevOps",
+    title: "🐳 Cloud & DevOps",
+    description:
+      "Tools and platforms used for development workflows, deployment, version control, and containerization.",
+    proficiency: "Intermediate",
+    tags: [
+      "Git",
+      "GitHub",
+      "Docker",
+      "Linux (Ubuntu)",
+      "Shell Scripting",
+      "CI/CD Basics",
+      "Postman",
+    ],
+  },
+  {
+    id: 7,
+    category: "AI & Emerging Tech",
+    title: "🤖 AI & Emerging Technologies",
+    description:
+      "Technologies and concepts used to integrate AI capabilities and intelligent features into applications.",
+    proficiency: "Intermediate",
+    tags: [
+      "OpenAI APIs",
+      "AI Integration",
+      "Prompt Engineering",
+      "RAG Basics",
+      "LLM Applications",
+    ],
+  },
+  {
+    id: 8,
+    category: "IoT",
+    title: "🔌 IoT & Embedded Systems",
+    description:
+      "Hardware-software integration, sensor monitoring, and communication protocols for connected devices.",
+    proficiency: "Intermediate",
+    tags: [
+      "ESP32",
+      "IoT Systems",
+      "Sensor Integration",
+      "Serial Communication",
+      "Real-Time Monitoring",
+    ],
+  },
+  {
+    id: 9,
+    category: "Computer Science",
+    title: "🧠 Core Computer Science",
+    description:
+      "Fundamental concepts essential for designing efficient, scalable, and reliable software systems.",
+    proficiency: "Advanced",
+    tags: [
+      "Data Structures & Algorithms",
+      "System Design",
+      "Object-Oriented Programming",
+      "Operating Systems",
+      "Computer Networks",
+      "DBMS",
+    ],
   },
 ];
 
-const categories = ["All", "Languages", "Frameworks", "Tools", "Soft Skills"];
-
+const categories = [
+  "All",
+  "Languages",
+  "Backend",
+  "Frontend",
+  "Mobile",
+  "Databases",
+  "Cloud & DevOps",
+  "AI & Emerging Tech",
+  "IoT",
+  "Computer Science",
+];
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -139,9 +236,6 @@ const Skills = () => {
                   <div className="flex gap-4 mb-3 items-center">
                     <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-accent">
                       {skill.category}
-                    </span>
-                    <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-muted-2">
-                      {skill.proficiency}
                     </span>
                   </div>
 

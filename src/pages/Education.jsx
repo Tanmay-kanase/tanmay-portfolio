@@ -5,89 +5,128 @@ const semestersData = [
     id: 8,
     term: "Semester 8",
     status: "Active",
-    statusColor: "var(--accent)",
+    statusColor: "var(--accent)", // Assumes your CSS has this variable
     cgpa: "TBD",
     timeline: "Jan 2026 - May 2026",
-    title: "Final Year Capstone & Electives",
+    title: "Advanced Computing & Capstone Execution",
     description:
-      "Focusing on advanced electives, industry-oriented subjects, and the execution and deployment of the final year capstone project.",
+      "Focusing on advanced paradigms and the final execution and deployment of the AgriPreserve capstone project.",
+    subjects: [
+      "High Performance Computing",
+      "Deep Learning",
+      "Soft Computing",
+      "Software Defined Networks",
+      "Project Stage II",
+    ],
   },
   {
     id: 7,
     term: "Semester 7",
     status: "Completed",
-    statusColor: "var(--muted-2)",
-    cgpa: "9.50 (Placeholder)",
+    statusColor: "var(--accent)", // Assumes your CSS has this variable
+    cgpa: "9.45",
     timeline: "Aug 2025 - Dec 2025",
-    title: "Specialized Computing & AI",
+    title: "Algorithms, Intelligence & Quality Assurance",
     description:
-      "Concepts Learned: Artificial Intelligence, Cloud Computing, Information Security. Initiated research and development for the final year engineering project.",
+      "Initiated research, predictive modeling, and hardware prototyping for the final-year engineering project.",
+    subjects: [
+      "Design & Analysis of Algorithms",
+      "Machine Learning",
+      "Blockchain Technology",
+      "Software Testing & QA",
+      "Project Stage I",
+    ],
   },
   {
     id: 6,
     term: "Semester 6",
     status: "Completed",
-    statusColor: "var(--muted-2)",
-    cgpa: "9.45 (Placeholder)",
+    statusColor: "var(--accent)",
+    cgpa: "8.83",
     timeline: "Jan 2025 - May 2025",
-    title: "Web Technologies & System Programming",
+    title: "Data Science, Web Technologies & AI",
     description:
-      "Concepts Learned: Web Technology, System Programming & Operating System, Data Science and Big Data Analytics. Hands-on experience building full-stack web applications and understanding OS kernels.",
+      "Explored advanced data processing, web application development, and artificial intelligence models . Specialized in Information Security to model cyber threats and apply cryptographic techniques .",
+    subjects: [
+      "Data Science & Big Data Analytics",
+      "Web Technology",
+      "Artificial Intelligence",
+      "Information Security",
+    ],
   },
   {
     id: 5,
     term: "Semester 5",
     status: "Completed",
-    statusColor: "var(--muted-2)",
-    cgpa: "9.60 (Placeholder)",
+    statusColor: "var(--accent)",
+    cgpa: "7.58",
     timeline: "Aug 2024 - Dec 2024",
-    title: "Core Systems & Databases",
+    title: "Core Computing Systems & Project Management",
     description:
-      "Concepts Learned: Database Management Systems (DBMS), Theory of Computation (TOC), Software Engineering, Computer Networks. Built strong fundamentals in SQL, NoSQL, and network protocols.",
+      "Gained a strong foundation in database design, theoretical computation, operating systems, and network security . Chose Software Project Management to understand project lifecycles, scheduling, and agile tracking methodologies .",
+    subjects: [
+      "Database Management Systems",
+      "Theory of Computation",
+      "Systems Programming & OS",
+      "Computer Networks & Security",
+      "Software Project Management",
+    ],
   },
   {
     id: 4,
     term: "Semester 4",
     status: "Completed",
-    statusColor: "var(--muted-2)",
-    cgpa: "9.30 (Placeholder)",
+    statusColor: "var(--accent)",
+    cgpa: "7.55 (One Backlog)",
     timeline: "Jan 2024 - May 2024",
-    title: "Advanced Data Structures & Graphics",
+    title: "Algorithms, Software Engineering & Microprocessors",
     description:
-      "Concepts Learned: Advanced Data Structures, Microprocessor, Principles of Programming Languages, Computer Graphics. Deep dive into complex algorithmic problem solving and hardware-software interfaces.",
-  },
-  {
-    id: 3,
-    term: "Semester 3",
-    status: "Completed",
-    statusColor: "var(--muted-2)",
-    cgpa: "9.40 (Placeholder)",
-    timeline: "Aug 2023 - Dec 2023",
-    title: "Foundations of Computer Science",
-    description:
-      "Concepts Learned: Discrete Mathematics, Data Structures and Algorithms (DSA), Object-Oriented Programming (OOP), Digital Electronics. Built the core logical foundation for software development using C++ and Java.",
+      "Studied advanced algorithmic strategies, software engineering principles, and microprocessor architectures . Covered foundational programming paradigms and advanced mathematics .",
+    subjects: [
+      "Mathematics III",
+      "Data Structures & Algorithms",
+      "Software Engineering",
+      "Microprocessor",
+      "Principles of Programming Languages",
+    ],
   },
   {
     id: 2,
     term: "Semester 2",
     status: "Completed",
-    statusColor: "var(--muted-2)",
-    cgpa: "9.55 (Placeholder)",
+    statusColor: "var(--accent)",
+    cgpa: "7.55",
     timeline: "Jan 2023 - May 2023",
-    title: "Engineering Mechanics & Programming",
+    title: "Foundational Engineering & Mechanics",
     description:
-      "Concepts Learned: Engineering Mathematics II, Advanced C Programming, Basic Electronics Engineering. Transitioned from theoretical sciences to applied computational logic.",
+      "Explored advanced mathematics, applied chemistry, and classical mechanics. Developed visual communication skills through engineering graphics and applied theoretical knowledge in a collaborative Project Based Learning (PBL) environment.",
+    subjects: [
+      "Engineering Mathematics-II",
+      "Engineering Chemistry",
+      "Engineering Mechanics",
+      "Basic Electronics Engineering",
+      "Engineering Graphics",
+      "Project Based Learning",
+    ],
   },
   {
     id: 1,
     term: "Semester 1",
     status: "Completed",
-    statusColor: "var(--muted-2)",
-    cgpa: "9.35 (Placeholder)",
+    statusColor: "var(--accent)",
+    cgpa: "7.35",
     timeline: "Aug 2022 - Dec 2022",
-    title: "Engineering Fundamentals",
+    title: "First Year Engineering Basics",
     description:
-      "Concepts Learned: Engineering Mathematics I, Engineering Physics, Systems in Mechanical Engineering, Basic Electrical Engineering. Established a strong analytical and mathematical foundation.",
+      "Introduced to core engineering principles including calculus, applied physics, and mechanical systems. Gained foundational computational thinking and coding skills using Python, alongside hands-on manufacturing experience in workshop practice.",
+    subjects: [
+      "Engineering Mathematics-I",
+      "Engineering Physics",
+      "Systems in Mechanical Engineering",
+      "Basic Electrical Engineering",
+      "Programming & Problem Solving",
+      "Workshop Practice",
+    ],
   },
 ];
 
@@ -101,12 +140,12 @@ const Education = () => {
             <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-muted-2">
               Academic Journey
             </span>
-            <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-fg font-medium">
+            <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-fg font-bold">
               Savitribai Phule Pune University (SPPU)
             </span>
           </div>
           <h1
-            className="font-medium max-w-[720px]"
+            className="font-medium max-w-[720px] text-accent"
             style={{
               margin: "0px 0px 24px",
               fontSize: "clamp(32px, 5vw, 60px)",
@@ -114,19 +153,19 @@ const Education = () => {
               lineHeight: "1",
             }}
           >
-            Bachelor of Engineering in Computer Engineering[cite: 1]
+            Bachelor of Engineering in Computer Engineering
           </h1>
           <p
             className="m-0 text-muted max-w-[620px]"
             style={{ fontSize: "clamp(16px, 1.8vw, 20px)", lineHeight: "1.6" }}
           >
             I am currently pursuing my degree at SGOI College of Engineering,
-            Pune, with an expected graduation in 2026[cite: 1]. My academic
-            journey has been a rigorous blend of theoretical computer science
-            fundamentals and practical software development. Through consistent
-            academic performance—maintaining an overall CGPA of 9.45—I have
-            built a strong foundation in data structures, algorithms, system
-            architecture, and modern full-stack development[cite: 1].
+            Pune, with an expected graduation in 2026 . My academic journey has
+            been a rigorous blend of theoretical computer science fundamentals
+            and practical software development. Through consistent academic
+            performance—maintaining an overall CGPA of 9.45—I have built a
+            strong foundation in data structures, algorithms, system
+            architecture, and modern full-stack development .
           </p>
         </div>
       </section>
@@ -175,6 +214,25 @@ const Education = () => {
                     <div className="text-sm text-muted leading-[1.5]">
                       {sem.description}
                     </div>
+
+                    {/* Mobile Subjects Boxes */}
+                    {sem.subjects && sem.subjects.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {sem.subjects.map((sub, idx) => (
+                          <span
+                            key={idx}
+                            className="px-2.5 py-1 text-[10px] font-mono tracking-wide uppercase border rounded-md"
+                            style={{
+                              color: sem.statusColor,
+                              borderColor: sem.statusColor,
+                              backgroundColor: "transparent",
+                            }}
+                          >
+                            {sub}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Desktop Layout */}
@@ -212,6 +270,25 @@ const Education = () => {
                       <div className="text-sm text-muted leading-[1.5]">
                         {sem.description}
                       </div>
+
+                      {/* Desktop Subjects Boxes */}
+                      {sem.subjects && sem.subjects.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mt-4">
+                          {sem.subjects.map((sub, idx) => (
+                            <span
+                              key={idx}
+                              className="px-2.5 py-1 text-[11px] font-mono tracking-wide uppercase border rounded-md transition-colors hover:bg-opacity-10"
+                              style={{
+                                color: sem.statusColor,
+                                borderColor: sem.statusColor,
+                                backgroundColor: "transparent",
+                              }}
+                            >
+                              {sub}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
 
                     {/* Arrow/Decorative Column */}
