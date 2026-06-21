@@ -50,7 +50,7 @@ const Navbar = () => {
             </span>
             {/* FIX 2: Added "hidden sm:inline-block" to hide this extra text on mobile, preventing the horizontal stretch */}
             <span
-              className="hidden sm:inline-block font-mono text-[11px] tracking-[0.08em] uppercase text-muted nav-time"
+              className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted nav-time"
               style={{ marginLeft: "6px", color: "var(--muted)" }}
             >
               FSD | Software Engineer
@@ -58,7 +58,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="nav-desktop hidden lg:block gap-0.5">
+          <nav className="nav-desktop hidden lg:flex gap-0.5">
             <a
               className="relative text-sm tracking-[-0.005em] hover:border-b-2 border-b-accent"
               style={{
@@ -128,7 +128,7 @@ const Navbar = () => {
           </nav>
 
           {/* Time, Search & CTA */}
-          <div className="nav-time hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4">
             <span
               className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted"
               style={{ color: "var(--muted)" }}
@@ -227,7 +227,7 @@ const Navbar = () => {
         <a
           className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
           style={{ color: "var(--fg)" }}
-          href="/"
+          href="/internship"
           onClick={toggleMobileMenu}
         >
           Internships
@@ -235,7 +235,7 @@ const Navbar = () => {
         <a
           className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
           style={{ color: "var(--fg)" }}
-          href="/work"
+          href="/projects"
           onClick={toggleMobileMenu}
         >
           Projects
@@ -243,7 +243,7 @@ const Navbar = () => {
         <a
           className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
           style={{ color: "var(--fg)" }}
-          href="/lab"
+          href="/certifications"
           onClick={toggleMobileMenu}
         >
           Certifications
@@ -251,7 +251,7 @@ const Navbar = () => {
         <a
           className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
           style={{ color: "var(--fg)" }}
-          href="/writing"
+          href="/education"
           onClick={toggleMobileMenu}
         >
           Education
@@ -259,7 +259,7 @@ const Navbar = () => {
         <a
           className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
           style={{ color: "var(--fg)" }}
-          href="/life"
+          href="/skills"
           onClick={toggleMobileMenu}
         >
           Skills
@@ -267,7 +267,7 @@ const Navbar = () => {
         <a
           className="nav-mobile-item text-lg font-medium py-3 border-b border-transparent"
           style={{ color: "var(--fg)" }}
-          href="/life"
+          href="/achievements"
           onClick={toggleMobileMenu}
         >
           Achievements

@@ -15,16 +15,19 @@ const coldStorageImg = [
   "cold storage/Screenshot_20260327_185054.jpg",
   "cold storage/Screenshot_20260327_185120.jpg",
 ];
-
 const logItems = [
-  "optimizing ESP32 payloads",
-  "debugging Spring Boot services",
-  "grinding C++ DSA",
-  "architecting Angular frontends",
-  "building Flutter mobile apps",
-  "deploying AI chatbots",
-  "refactoring UI components",
-  "status: deep-work-mode",
+  "designing scalable Spring Boot APIs",
+  "optimizing MongoDB queries",
+  "grinding C++ DSA problems",
+  "integrating AI into applications",
+  "architecting system designs",
+  "building React user interfaces",
+  "developing Flutter mobile apps",
+  "debugging distributed services",
+  "engineering ESP32 communication protocols",
+  "exploring database internals",
+  "deploying full-stack applications",
+  "status: shipping features 🚀",
 ];
 const achievementsData = [
   {
