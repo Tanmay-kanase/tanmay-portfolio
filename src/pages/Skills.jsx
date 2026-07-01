@@ -132,6 +132,24 @@ const skillsData = [
       "DBMS",
     ],
   },
+  {
+    id: 10,
+    category: "Algorithms & DSA",
+    title: "🧩 Problem Solving & DSA",
+    description:
+      "Algorithmic patterns and data structures utilized for competitive programming and writing heavily optimized code.",
+    proficiency: "Advanced",
+    tags: [
+      "Data Structures & Algorithms",
+      "Sliding Window",
+      "Two Pointers",
+      "Dynamic Programming",
+      "Graphs",
+      "Trees",
+      "Binary Search",
+      "Backtracking",
+    ],
+  },
 ];
 
 const categories = [
@@ -145,6 +163,7 @@ const categories = [
   "AI & Emerging Tech",
   "IoT",
   "Computer Science",
+  "Algorithms & DSA",
 ];
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("All");

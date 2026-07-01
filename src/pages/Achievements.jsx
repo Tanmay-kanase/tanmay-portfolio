@@ -1,7 +1,10 @@
+import { useEffect } from "react";
+
 // --- DATA FOR YOUR ACHIEVEMENTS ---
 const achievementsData = [
   {
     id: 1,
+    slug: "leetcode-streak",
     title: "100-Day LeetCode Streak",
     subtitle: "Problem Solving · Consistency",
     description: [
@@ -16,6 +19,7 @@ const achievementsData = [
   },
   {
     id: 2,
+    slug: "best-performer",
     title: "Best Performer of the Week (2 Times)",
     subtitle: "Sumago Infotech Pvt. Ltd. · Internship",
     description: [
@@ -29,6 +33,7 @@ const achievementsData = [
   },
   {
     id: 3,
+    slug: "blind-coding",
     title: "1st Place - Blind Coding Competition",
     subtitle: "College-Level · SGOI College of Engineering",
     description: [
@@ -43,6 +48,18 @@ const achievementsData = [
 ];
 
 const Achievements = () => {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      // Small timeout ensures the DOM has painted before trying to scroll
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, []);
   return (
     <section
       className="border-t border-hair bg-bg"
@@ -62,7 +79,11 @@ const Achievements = () => {
         {/* Grid of Achievement Cards */}
         <div className="grid gap-8 max-w-[920px]">
           {achievementsData.map((item) => (
-            <div key={item.id} className="border border-hair bg-bg p-8">
+            <div
+              key={item.id}
+              id={item.slug}
+              className="border border-hair bg-bg p-8"
+            >
               {/* Card Header */}
               <div className="flex justify-between gap-4 items-start flex-wrap mb-4">
                 <h2
