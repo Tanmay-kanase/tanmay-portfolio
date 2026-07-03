@@ -153,6 +153,69 @@ const coldStorageSteps = [
     imageType: "mobile",
   },
 ];
+
+const aiIntegratedQuiz = [
+  {
+    id: 1,
+    icon: "🧠",
+    shortName: "AI Quiz",
+    badge: "Education",
+    title: "AI-Integrated Quiz Application",
+    desc: "Developed an AI-powered quiz platform featuring immersive full-screen quiz mode, quiz exploration, detailed guidelines, built-in calculator support, and advanced tab-switch detection to ensure a secure and distraction-free assessment experience.",
+    tags: ["AI", "Quiz", "Full Screen", "Calculator", "Security"],
+    imageSrc: "quiz/Screenshot (654).png",
+  },
+  {
+    id: 2,
+    icon: "📖",
+    shortName: "Explore",
+    badge: "Discovery",
+    title: "Quiz Exploration & Category Browsing",
+    desc: "Implemented an intuitive explore section that allows users to discover quizzes across multiple categories, difficulty levels, and topics, making learning more engaging and personalized.",
+    tags: ["Explore", "Categories", "Discovery"],
+    imageSrc: "quiz/Screenshot (655).png",
+  },
+  {
+    id: 3,
+    icon: "📝",
+    shortName: "Guidelines",
+    badge: "Instructions",
+    title: "Comprehensive Quiz Guidelines",
+    desc: "Designed a dedicated quiz guidelines module that provides clear instructions, rules, scoring information, and assessment requirements before users begin their quizzes.",
+    tags: ["Guidelines", "Instructions", "UX"],
+    imageSrc: "quiz/Screenshot (656).png",
+  },
+  {
+    id: 4,
+    icon: "🖥️",
+    shortName: "Full Screen",
+    badge: "Exam Mode",
+    title: "Distraction-Free Full-Screen Quiz Experience",
+    desc: "Integrated a mandatory full-screen assessment mode to create an exam-like environment, minimizing distractions and helping users stay focused throughout the quiz session.",
+    tags: ["Full Screen", "Focus", "Exam Mode"],
+    imageSrc: "quiz/Screenshot (657).png",
+  },
+  {
+    id: 5,
+    icon: "🧮",
+    shortName: "Calculator",
+    badge: "Utility",
+    title: "Built-In Calculator Support",
+    desc: "Added an integrated calculator tool for solving numerical and logical problems directly within the quiz interface, enhancing convenience without leaving the assessment environment.",
+    tags: ["Calculator", "Utility", "Math"],
+    imageSrc: "quiz/Screenshot (659).png",
+  },
+  {
+    id: 6,
+    icon: "🚫",
+    shortName: "Tab Security",
+    badge: "Proctoring",
+    title: "Automatic Exit on Tab Switching",
+    desc: "Implemented browser tab-switch detection that automatically terminates or exits the quiz when users navigate away, ensuring fairness, integrity, and a secure testing experience.",
+    tags: ["Security", "Tab Detection", "Proctoring"],
+    imageSrc: "quiz/Screenshot (660).png",
+  },
+];
 const projectConfig = {
   parking: {
     title: "Smart Parking System",
@@ -164,6 +227,11 @@ const projectConfig = {
       "Agri Preserve: Smart Cold Storage system for farmers (Final Year Project)",
     description:
       "IoT-based cold storage monitoring using ESP32, Flutter, Node.js, MongoDB, WebSockets, AI assistant, analytics and remote relay control.",
+  },
+  aiIntegrQuiz: {
+    title: "AI-Integrated Quiz Platform",
+    description:
+      "Developed a comprehensive AI-powered quiz application featuring quiz exploration, detailed assessment guidelines, immersive full-screen exam mode, integrated calculator support, and secure tab-switch detection that automatically exits assessments to maintain integrity, delivering an engaging, focused, and reliable testing experience.",
   },
 };
 // ... KEEP YOUR DATA ARRAYS AND CONFIG AT THE TOP (smartParkingSteps, coldStorageSteps, projectConfig) ...
@@ -432,16 +500,21 @@ const SingleProjectView = ({ projectKey, steps, info }) => {
 // 2. Main component that handles the layout and ordering
 const ProjectWalkthrough = () => {
   // Use an array to track the order of the projects. The first element is shown on top.
-  const [projectOrder, setProjectOrder] = useState(["parking", "coldStorage"]);
+  const [projectOrder, setProjectOrder] = useState([
+    "parking",
+    "coldStorage",
+    "aiIntegrQuiz",
+  ]);
 
   const handleProjectSwitch = (topProject) => {
     if (topProject === "parking") {
-      setProjectOrder(["parking", "coldStorage"]);
-    } else {
-      setProjectOrder(["coldStorage", "parking"]);
+      setProjectOrder(["parking", "coldStorage", "aiIntegrQuiz"]);
+    } else if (topProject === "coldStorage") {
+      setProjectOrder(["coldStorage", "parking", "aiIntegrQuiz"]);
+    } else if (topProject === "aiIntegrQuiz") {
+      setProjectOrder(["aiIntegrQuiz", "parking", "coldStorage"]);
     }
 
-    // Optional: Smooth scroll back to the top of the section when reordering
     window.scrollTo({
       top: document.getElementById("project-section")?.offsetTop,
       behavior: "smooth",
@@ -451,6 +524,7 @@ const ProjectWalkthrough = () => {
   const projectDataMap = {
     parking: { steps: smartParkingSteps, info: projectConfig.parking },
     coldStorage: { steps: coldStorageSteps, info: projectConfig.coldStorage },
+    aiIntegrQuiz: { steps: aiIntegratedQuiz, info: projectConfig.aiIntegrQuiz },
   };
 
   return (
@@ -485,6 +559,17 @@ const ProjectWalkthrough = () => {
             }`}
           >
             Agri Preserve: Cold Storage System for farmers.
+          </button>
+          <span className="text-muted-2">/</span>
+          <button
+            onClick={() => handleProjectSwitch("aiIntegrQuiz")}
+            className={`font-mono font-bold text-[14px] tracking-[0.08em] uppercase transition-colors whitespace-nowrap ${
+              projectOrder[0] === "aiIntegrQuiz"
+                ? "text-accent"
+                : "text-muted hover:text-fg"
+            }`}
+          >
+            AI : Integrated Quiz App{" "}
           </button>
         </div>
 
