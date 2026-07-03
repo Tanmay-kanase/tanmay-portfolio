@@ -207,6 +207,16 @@ const aiIntegratedQuiz = [
   },
   {
     id: 6,
+    icon: "⚙",
+    shortName: "Coding Assessment",
+    badge: "Coding",
+    title: "Coding assessment for programming quizzes",
+    desc: "Implemented Coding Assessment so student can write and run code and we can add the coding marks in the result.",
+    tags: ["Coding", "Tab Detection", "Proctoring"],
+    imageSrc: "quiz/Screenshot (661).png",
+  },
+  {
+    id: 7,
     icon: "🚫",
     shortName: "Tab Security",
     badge: "Proctoring",
@@ -214,6 +224,16 @@ const aiIntegratedQuiz = [
     desc: "Implemented browser tab-switch detection that automatically terminates or exits the quiz when users navigate away, ensuring fairness, integrity, and a secure testing experience.",
     tags: ["Security", "Tab Detection", "Proctoring"],
     imageSrc: "quiz/Screenshot (660).png",
+  },
+  {
+    id: 8,
+    icon: "🧩",
+    shortName: "Thankyou page ",
+    badge: "Thank you",
+    title: "Thank you page at last ",
+    desc: "After successfully completing the quiz and coding assessment , saying thank you to student.",
+    tags: ["Security", "Tab Detection", "Proctoring"],
+    imageSrc: "quiz/Screenshot (662).png",
   },
 ];
 const projectConfig = {
