@@ -35,7 +35,7 @@ const Certifications = () => {
       description:
         "Extensive training in building end-to-end web applications, designing responsive frontends, and developing robust backend architectures.",
       date: "Recent",
-      imageUrl: "/path/to/your/fullstack-certificate.jpg", // Replace with your actual image path
+      imageUrl: "/certification/excelr.png", // Replace with your actual image path
       link: "#",
     },
     {
@@ -49,6 +49,53 @@ const Certifications = () => {
       imageUrl:
         "https://udemy-certificate.s3.amazonaws.com/image/UC-374196e9-d031-445e-a1b1-51cc951c7d49.jpg", // Replace with your actual image path
       link: "https://www.udemy.com/certificate/UC-374196e9-d031-445e-a1b1-51cc951c7d49/#",
+    },
+    {
+      id: 5,
+      status: "completed",
+      provider: "KG Coding",
+      title: "JavaScript Certification Test",
+      description:
+        "Successfully completed a comprehensive JavaScript Certification Test, demonstrating proficiency in core JavaScript concepts including variables, functions, objects, arrays, DOM manipulation, ES6+ features, asynchronous programming, and problem-solving skills. Gained hands-on experience in writing efficient, scalable, and maintainable JavaScript code for modern web applications.",
+      date: "07 July 2024",
+      imageUrl:
+        "https://media.licdn.com/dms/image/v2/D4E2DAQFH6GplCCcvwA/profile-treasury-image-shrink_1280_1280/profile-treasury-image-shrink_1280_1280/0/1720333183263?e=1787295600&v=beta&t=rOE_08rHU3e8mKvqVxK0Odi_gRGEkuTFOIjsO9Kj-ow",
+      link: "https://www.linkedin.com/in/tanmay-kanase/details/certifications/",
+    },
+    {
+      id: 6,
+      status: "completed",
+      provider: "KG Coding",
+      title: "React and Redux",
+      description:
+        "Completed the React and Redux certification program, gaining expertise in building dynamic and responsive user interfaces using React. Learned component-based architecture, state management with Redux, React Hooks, routing, API integration, and best practices for developing scalable single-page applications (SPAs).",
+      date: "30 January 2024",
+      imageUrl:
+        "https://media.licdn.com/dms/image/v2/D4E2DAQE9aP-uTWSMjg/profile-treasury-image-shrink_1280_1280/profile-treasury-image-shrink_1280_1280/0/1720329873675?e=1787295600&v=beta&t=nljZXSeGaGuNnUbLQnhfrJdfLUKnTzOxPTYwi8EJySk",
+      link: "https://www.linkedin.com/in/tanmay-kanase/details/certifications/",
+    },
+    {
+      id: 7,
+      status: "completed",
+      provider: "Simplilearn",
+      title: "Introduction to DevOps Tools",
+      description:
+        "Completed a foundational course on DevOps tools and practices, covering version control, continuous integration, containerization, configuration management, and automation. Gained knowledge of popular tools such as Git, Docker, Ansible, Chef, Puppet, and Selenium, along with their role in modern software development and deployment workflows.",
+      date: "09 July 2024",
+      imageUrl:
+        "https://certificates.simplicdn.net/share/thumb_6889427_1720494255.png",
+      link: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxODA3IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvdGh1bWJfNjg4OTQyN18xNzIwNDk0MjU1LnBuZyIsInVzZXJuYW1lIjoiVGFubWF5IFNhbmRlZXAgS2FuYXNlICJ9&utm_source=shared-certificate&utm_medium=app_lms&utm_campaign=shared-certificate-promotion",
+    },
+    {
+      id: 8,
+      status: "completed",
+      provider: "IBM",
+      title: "Python for Data Science",
+      description:
+        "Successfully completed IBM's Python for Data Science course, learning Python programming fundamentals, data manipulation, data analysis techniques, and essential libraries used in data science. Developed practical skills for working with datasets and solving real-world analytical problems using Python.",
+      date: "July 2024",
+      imageUrl: "/certification/image.png",
+      link: "https://courses.cognitiveclass.ai/certificates/3715b5dd765a4d87a4cbcbba7ea04730",
     },
   ];
 
