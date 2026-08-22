@@ -1,9 +1,8 @@
 import { useState } from "react";
 
 const Certifications = () => {
-  const [hoveredId, setHoveredId] = useState(null);
+  const [activeImage, setActiveImage] = useState(null); // { url, title } for fullscreen modal
 
-  // Data array for your certifications
   const certifications = [
     {
       id: 1,
@@ -13,7 +12,7 @@ const Certifications = () => {
       description:
         "Comprehensive certification covering core Java concepts, object-oriented programming principles, and advanced features.",
       date: "Recent",
-      imageUrl: "NPTEL24CS43S106230227330765419_page-0001.jpg", // Replace with your actual image path
+      imageUrl: "NPTEL24CS43S106230227330765419_page-0001.jpg",
       link: "#",
     },
     {
@@ -24,7 +23,7 @@ const Certifications = () => {
       description:
         "In-depth study of cloud architectures, deployment models, distributed systems, and prominent cloud service providers.",
       date: "Recent",
-      imageUrl: "NPTEL24CS118S95350087704355381_page-0001.jpg", // Replace with your actual image path
+      imageUrl: "NPTEL24CS118S95350087704355381_page-0001.jpg",
       link: "#",
     },
     {
@@ -35,7 +34,7 @@ const Certifications = () => {
       description:
         "Extensive training in building end-to-end web applications, designing responsive frontends, and developing robust backend architectures.",
       date: "Recent",
-      imageUrl: "/certification/excelr.png", // Replace with your actual image path
+      imageUrl: "/certification/excelr.png",
       link: "#",
     },
     {
@@ -44,19 +43,19 @@ const Certifications = () => {
       provider: "Udemy , Instructor: Deepak Dubey",
       title: "AWS Certified Developer Associate - Theory + Hands-On + Exam",
       description:
-        "Develop and optimize cloud-native applications using AWS services, APIs, CLI, and SDKsImplement robust security measures for AWS applications, including authentication, authorization, and encryptionDeploy applications on AWS using CI/CD pipelines, Infrastructure as Code, and various deployment strategiesTroubleshoot and optimize AWS applications using logging, monitoring, and observability too",
+        "Develop and optimize cloud-native applications using AWS services, APIs, CLI, and SDKs. Implement robust security measures including authentication, authorization, and encryption. Deploy applications using CI/CD pipelines, Infrastructure as Code, and various deployment strategies.",
       date: "Recent",
       imageUrl:
-        "https://udemy-certificate.s3.amazonaws.com/image/UC-374196e9-d031-445e-a1b1-51cc951c7d49.jpg", // Replace with your actual image path
+        "https://udemy-certificate.s3.amazonaws.com/image/UC-374196e9-d031-445e-a1b1-51cc951c7d49.jpg",
       link: "https://www.udemy.com/certificate/UC-374196e9-d031-445e-a1b1-51cc951c7d49/#",
     },
     {
       id: 5,
-      status: "completed",
+      status: "Completed",
       provider: "KG Coding",
       title: "JavaScript Certification Test",
       description:
-        "Successfully completed a comprehensive JavaScript Certification Test, demonstrating proficiency in core JavaScript concepts including variables, functions, objects, arrays, DOM manipulation, ES6+ features, asynchronous programming, and problem-solving skills. Gained hands-on experience in writing efficient, scalable, and maintainable JavaScript code for modern web applications.",
+        "Successfully completed a comprehensive JavaScript Certification Test, demonstrating proficiency in core JavaScript concepts including variables, functions, objects, arrays, DOM manipulation, ES6+ features, and asynchronous programming.",
       date: "07 July 2024",
       imageUrl:
         "https://media.licdn.com/dms/image/v2/D4E2DAQFH6GplCCcvwA/profile-treasury-image-shrink_1280_1280/profile-treasury-image-shrink_1280_1280/0/1720333183263?e=1787295600&v=beta&t=rOE_08rHU3e8mKvqVxK0Odi_gRGEkuTFOIjsO9Kj-ow",
@@ -64,11 +63,11 @@ const Certifications = () => {
     },
     {
       id: 6,
-      status: "completed",
+      status: "Completed",
       provider: "KG Coding",
       title: "React and Redux",
       description:
-        "Completed the React and Redux certification program, gaining expertise in building dynamic and responsive user interfaces using React. Learned component-based architecture, state management with Redux, React Hooks, routing, API integration, and best practices for developing scalable single-page applications (SPAs).",
+        "Completed the React and Redux certification program, gaining expertise in building dynamic and responsive user interfaces using React, component-based architecture, state management, Hooks, routing, and API integration.",
       date: "30 January 2024",
       imageUrl:
         "https://media.licdn.com/dms/image/v2/D4E2DAQE9aP-uTWSMjg/profile-treasury-image-shrink_1280_1280/profile-treasury-image-shrink_1280_1280/0/1720329873675?e=1787295600&v=beta&t=nljZXSeGaGuNnUbLQnhfrJdfLUKnTzOxPTYwi8EJySk",
@@ -76,11 +75,11 @@ const Certifications = () => {
     },
     {
       id: 7,
-      status: "completed",
+      status: "Completed",
       provider: "Simplilearn",
       title: "Introduction to DevOps Tools",
       description:
-        "Completed a foundational course on DevOps tools and practices, covering version control, continuous integration, containerization, configuration management, and automation. Gained knowledge of popular tools such as Git, Docker, Ansible, Chef, Puppet, and Selenium, along with their role in modern software development and deployment workflows.",
+        "Completed a foundational course on DevOps tools and practices, covering version control, continuous integration, containerization, configuration management, and automation using Git, Docker, Ansible, Chef, Puppet, and Selenium.",
       date: "09 July 2024",
       imageUrl:
         "https://certificates.simplicdn.net/share/thumb_6889427_1720494255.png",
@@ -88,11 +87,11 @@ const Certifications = () => {
     },
     {
       id: 8,
-      status: "completed",
+      status: "Completed",
       provider: "IBM",
       title: "Python for Data Science",
       description:
-        "Successfully completed IBM's Python for Data Science course, learning Python programming fundamentals, data manipulation, data analysis techniques, and essential libraries used in data science. Developed practical skills for working with datasets and solving real-world analytical problems using Python.",
+        "Successfully completed IBM's Python for Data Science course, learning Python programming fundamentals, data manipulation, data analysis techniques, and essential libraries used in data science.",
       date: "July 2024",
       imageUrl: "/certification/image.png",
       link: "https://courses.cognitiveclass.ai/certificates/3715b5dd765a4d87a4cbcbba7ea04730",
@@ -102,45 +101,36 @@ const Certifications = () => {
   return (
     <section className="pb-24 bg-bg">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        {/* Section Header */}
         <div className="border-t border-hair">
           <div className="border-b border-hair py-6">
-            <div className="flex justify-between gap-4 items-center mb-3 flex-wrap">
-              <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-muted-2">
-                Certifications & Training
-              </span>
-            </div>
+            <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-muted-2">
+              Certifications & Training
+            </span>
           </div>
 
-          {/* Certification Items */}
           {certifications.map((cert) => (
-            <div
-              key={cert.id}
-              className="border-b border-hair py-6 relative group"
-              onMouseEnter={() => setHoveredId(cert.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            >
-              <div className="flex justify-between gap-4 items-center mb-3 flex-wrap">
-                <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-muted-2">
-                  Last updated {cert.date}
-                </span>
-              </div>
+            <div key={cert.id} className="border-b border-hair py-6">
+              <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-muted-2">
+                Last updated {cert.date}
+              </span>
 
+              {/* Desktop / Tablet Layout: image is a real grid column, can't overlap text */}
               <div
-                className="py-[26px] cursor-pointer transition-colors duration-200 relative"
-                style={{ background: "transparent" }}
+                className="hidden md:grid gap-x-2 items-center mt-4"
+                style={{ gridTemplateColumns: "90px 100px 1fr 200px" }}
               >
-                {/* Mobile Layout */}
-                <div className="flex flex-col gap-2 md:hidden">
-                  <div className="flex items-center gap-3">
-                    <span className="size-[6px] rounded-full shrink-0 bg-green-600"></span>
-                    <span className="font-mono text-green-400 text-[11px] tracking-[0.08em] uppercase ">
-                      {cert.status}
-                    </span>
-                    <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-muted-2">
-                      {cert.provider}
-                    </span>
-                  </div>
+                <div className="flex items-center gap-[6px]">
+                  <span className="size-[6px] rounded-full shrink-0 bg-green-600"></span>
+                  <span className="font-mono text-green-600 text-[11px] tracking-[0.08em] uppercase">
+                    {cert.status}
+                  </span>
+                </div>
+
+                <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted">
+                  {cert.provider}
+                </span>
+
+                <div className="min-w-0">
                   <div
                     className="font-medium tracking-[-0.015em] mb-1"
                     style={{ fontSize: "clamp(15px, 1.6vw, 18px)" }}
@@ -150,67 +140,67 @@ const Certifications = () => {
                   <div className="text-sm text-muted leading-[1.5]">
                     {cert.description}
                   </div>
-                </div>
-
-                {/* Desktop Layout */}
-                <div
-                  className="hidden md:grid gap-x-7 items-start relative z-10"
-                  style={{ gridTemplateColumns: "110px 130px 1fr 20px" }}
-                >
-                  <div className="flex items-center gap-[6px] pt-0.5">
-                    <span className="size-[6px] rounded-full shrink-0 bg-green-600"></span>
-                    <span className="font-mono text-green-600 text-[11px] tracking-[0.08em] uppercase">
-                      {cert.status}
-                    </span>
-                  </div>
-                  <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted pt-0.5">
-                    {cert.provider}
-                  </span>
-                  <div className="pr-32">
-                    <div
-                      className="font-medium tracking-[-0.015em] mb-1"
-                      style={{ fontSize: "clamp(15px, 1.6vw, 18px)" }}
-                    >
-                      {cert.title}
-                    </div>
-
-                    <div className="text-sm text-muted leading-[1.5]">
-                      {cert.description}
-                    </div>
-
-                    {hoveredId === cert.id && (
-                      <a
-                        href={cert.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block mt-3 text-sm border border-hair px-3 py-2"
-                      >
-                        View Certificate ↗
-                      </a>
-                    )}
-                  </div>
-                  <div
-                    className="text-sm pt-0.5 transition-[color,transform] duration-200"
-                    style={{ color: "var(--muted-2)", transform: "none" }}
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-3 text-sm border border-hair px-3 py-2"
                   >
-                    →
-                  </div>
+                    View Certificate ↗
+                  </a>
                 </div>
 
-                {/* Hover Image Reveal */}
-                <div
-                  className={`absolute top-1/2 right-12 md:right-24 -translate-y-1/2 z-20 pointer-events-none transition-all duration-300 ease-out origin-center ${
-                    hoveredId === cert.id
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-95"
-                  }`}
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveImage({ url: cert.imageUrl, title: cert.title })
+                  }
+                  className="justify-self-end"
                 >
                   <img
                     src={cert.imageUrl}
                     alt={`${cert.title} Certificate`}
-                    className="w-48 md:w-64 h-auto shadow-2xl rounded-sm object-cover border border-hair-2 bg-bg"
+                    className="w-full h-auto max-h-40 shadow-2xl rounded-sm object-cover border border-hair-2 bg-bg cursor-pointer hover:opacity-90 transition-opacity"
                   />
+                </button>
+              </div>
+
+              {/* Mobile Layout: thumbnail below text, tap to open fullscreen modal */}
+              <div className="flex flex-col gap-3 md:hidden mt-3">
+                <div className="flex items-center gap-3">
+                  <span className="size-[6px] rounded-full shrink-0 bg-green-600"></span>
+                  <span className="font-mono text-green-400 text-[11px] tracking-[0.08em] uppercase">
+                    {cert.status}
+                  </span>
+                  <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted text-muted-2">
+                    {cert.provider}
+                  </span>
                 </div>
+
+                <div
+                  className="font-medium tracking-[-0.015em]"
+                  style={{ fontSize: "clamp(15px, 1.6vw, 18px)" }}
+                >
+                  {cert.title}
+                </div>
+
+                <div className="text-sm text-muted leading-[1.5]">
+                  {cert.description}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveImage({ url: cert.imageUrl, title: cert.title })
+                  }
+                  className="self-start"
+                >
+                  <img
+                    src={cert.imageUrl}
+                    alt={`${cert.title} Certificate`}
+                    className="w-28 h-auto shadow-lg rounded-sm object-cover border border-hair-2 bg-bg cursor-pointer"
+                  />
+                </button>
               </div>
             </div>
           ))}
@@ -224,6 +214,29 @@ const Certifications = () => {
           certifications.
         </p>
       </div>
+
+      {/* Fullscreen image modal (used on all breakpoints when a thumbnail is tapped) */}
+      {activeImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          onClick={() => setActiveImage(null)}
+        >
+          <button
+            type="button"
+            onClick={() => setActiveImage(null)}
+            className="absolute top-4 right-4 md:top-6 md:right-6 text-white text-2xl leading-none w-10 h-10 flex items-center justify-center rounded-full border border-white/30 hover:bg-white/10"
+            aria-label="Close"
+          >
+            ×
+          </button>
+          <img
+            src={activeImage.url}
+            alt={`${activeImage.title} Certificate - full view`}
+            className="max-w-full max-h-full object-contain rounded-sm shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 };

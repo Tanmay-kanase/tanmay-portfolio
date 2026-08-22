@@ -1,40 +1,180 @@
 // --- DATA FOR YOUR SEMESTERS ---
+
+import { useState } from "react";
+
 // You can edit the CGPA, subjects, and concepts learned for each semester here.
+// const semestersData = [
+//   {
+//     id: 8,
+//     term: "Semester 8",
+//     status: "Active",
+//     statusColor: "var(--accent)",
+//     cgpa: "TBD",
+//     timeline: "Jan 2026 - May 2026",
+//     title: "Advanced Computing & Capstone Execution",
+//     description:
+//       "Focusing on advanced paradigms and the final execution and deployment of the AgriPreserve capstone project.",
+//     subjects: [
+//       "High Performance Computing",
+//       "Deep Learning",
+//       "Soft Computing",
+//       "Software Defined Networks",
+//       "Project Stage II",
+//     ],
+//   },
+//   {
+//     id: 7,
+//     term: "Semester 7",
+//     status: "Completed",
+//     statusColor: "var(--accent)",
+//     cgpa: "9.45",
+//     timeline: "Aug 2025 - Dec 2025",
+//     title: "Algorithms, Intelligence & Quality Assurance",
+//     description:
+//       "Initiated research, predictive modeling, and hardware prototyping for the final-year engineering project.",
+//     subjects: [
+//       "Design & Analysis of Algorithms",
+//       "Machine Learning",
+//       "Blockchain Technology",
+//       "Software Testing & QA",
+//       "Project Stage I",
+//     ],
+//   },
+//   {
+//     id: 6,
+//     term: "Semester 6",
+//     status: "Completed",
+//     statusColor: "var(--accent)",
+//     cgpa: "8.83",
+//     timeline: "Jan 2025 - May 2025",
+//     title: "Data Science, Web Technologies & AI",
+//     description:
+//       "Explored advanced data processing, web application development, and artificial intelligence models . Specialized in Information Security to model cyber threats and apply cryptographic techniques .",
+//     subjects: [
+//       "Data Science & Big Data Analytics",
+//       "Web Technology",
+//       "Artificial Intelligence",
+//       "Information Security",
+//     ],
+//   },
+//   {
+//     id: 5,
+//     term: "Semester 5",
+//     status: "Completed",
+//     statusColor: "var(--accent)",
+//     cgpa: "7.58",
+//     timeline: "Aug 2024 - Dec 2024",
+//     title: "Core Computing Systems & Project Management",
+//     description:
+//       "Gained a strong foundation in database design, theoretical computation, operating systems, and network security . Chose Software Project Management to understand project lifecycles, scheduling, and agile tracking methodologies .",
+//     subjects: [
+//       "Database Management Systems",
+//       "Theory of Computation",
+//       "Systems Programming & OS",
+//       "Computer Networks & Security",
+//       "Software Project Management",
+//     ],
+//   },
+//   {
+//     id: 4,
+//     term: "Semester 4",
+//     status: "Completed",
+//     statusColor: "var(--accent)",
+//     cgpa: "7.55 (One Backlog)",
+//     timeline: "Jan 2024 - May 2024",
+//     title: "Algorithms, Software Engineering & Microprocessors",
+//     description:
+//       "Studied advanced algorithmic strategies, software engineering principles, and microprocessor architectures . Covered foundational programming paradigms and advanced mathematics .",
+//     subjects: [
+//       "Mathematics III",
+//       "Data Structures & Algorithms",
+//       "Software Engineering",
+//       "Microprocessor",
+//       "Principles of Programming Languages",
+//     ],
+//   },
+//   {
+//     id: 2,
+//     term: "Semester 2",
+//     status: "Completed",
+//     statusColor: "var(--accent)",
+//     cgpa: "7.55",
+//     timeline: "Jan 2023 - May 2023",
+//     title: "Foundational Engineering & Mechanics",
+//     description:
+//       "Explored advanced mathematics, applied chemistry, and classical mechanics. Developed visual communication skills through engineering graphics and applied theoretical knowledge in a collaborative Project Based Learning (PBL) environment.",
+//     subjects: [
+//       "Engineering Mathematics-II",
+//       "Engineering Chemistry",
+//       "Engineering Mechanics",
+//       "Basic Electronics Engineering",
+//       "Engineering Graphics",
+//       "Project Based Learning",
+//     ],
+//   },
+//   {
+//     id: 1,
+//     term: "Semester 1",
+//     status: "Completed",
+//     statusColor: "var(--accent)",
+//     cgpa: "7.35",
+//     timeline: "Aug 2022 - Dec 2022",
+//     title: "First Year Engineering Basics",
+//     description:
+//       "Introduced to core engineering principles including calculus, applied physics, and mechanical systems. Gained foundational computational thinking and coding skills using Python, alongside hands-on manufacturing experience in workshop practice.",
+//     subjects: [
+//       "Engineering Mathematics-I",
+//       "Engineering Physics",
+//       "Systems in Mechanical Engineering",
+//       "Basic Electrical Engineering",
+//       "Programming & Problem Solving",
+//       "Workshop Practice",
+//     ],
+//   },
+// ];
+
 const semestersData = [
   {
     id: 8,
     term: "Semester 8",
-    status: "Active",
-    statusColor: "var(--accent)", // Assumes your CSS has this variable
-    cgpa: "TBD",
+    status: "Completed",
+    statusColor: "var(--accent)",
+    cgpa: "9.40",
     timeline: "Jan 2026 - May 2026",
-    title: "Advanced Computing & Capstone Execution",
+    title: "Advanced Computing & Capstone Completion",
     description:
-      "Focusing on advanced paradigms and the final execution and deployment of the AgriPreserve capstone project.",
+      "Graduated with First Class with Distinction (CGPA: 8.51). Final semester focused on advanced computing paradigms and the successful execution and deployment of the AgriPreserve capstone project.",
     subjects: [
       "High Performance Computing",
       "Deep Learning",
-      "Soft Computing",
       "Software Defined Networks",
+      "Soft Computing",
+      "Laboratory Practice V",
+      "Laboratory Practice VI",
       "Project Stage II",
+      "Social Media and Analytics",
     ],
   },
   {
     id: 7,
     term: "Semester 7",
     status: "Completed",
-    statusColor: "var(--accent)", // Assumes your CSS has this variable
+    statusColor: "var(--accent)",
     cgpa: "9.45",
     timeline: "Aug 2025 - Dec 2025",
-    title: "Algorithms, Intelligence & Quality Assurance",
+    title: "Algorithms, Intelligence & Software Quality",
     description:
-      "Initiated research, predictive modeling, and hardware prototyping for the final-year engineering project.",
+      "Fourth Year SGPA: 9.40. Initiated research, predictive modeling, and object-oriented design work for the final-year engineering project, alongside a deep dive into software testing methodology.",
     subjects: [
       "Design & Analysis of Algorithms",
       "Machine Learning",
       "Blockchain Technology",
-      "Software Testing & QA",
+      "Object Oriented Modelling & Design",
+      "Software Testing & Quality Assurance",
+      "Laboratory Practice III",
+      "Laboratory Practice IV",
       "Project Stage I",
+      "Entrepreneurship Development",
     ],
   },
   {
@@ -46,12 +186,15 @@ const semestersData = [
     timeline: "Jan 2025 - May 2025",
     title: "Data Science, Web Technologies & AI",
     description:
-      "Explored advanced data processing, web application development, and artificial intelligence models . Specialized in Information Security to model cyber threats and apply cryptographic techniques .",
+      "Third Year SGPA: 8.83. Explored advanced data processing, web application development, and artificial intelligence models. Specialized in Information Security to model cyber threats and apply cryptographic techniques, alongside a hands-on internship.",
     subjects: [
       "Data Science & Big Data Analytics",
       "Web Technology",
       "Artificial Intelligence",
       "Information Security",
+      "Internship",
+      "Laboratory Practice II",
+      "Digital & Social Media Marketing",
     ],
   },
   {
@@ -59,17 +202,20 @@ const semestersData = [
     term: "Semester 5",
     status: "Completed",
     statusColor: "var(--accent)",
-    cgpa: "7.58",
+    cgpa: "8.67",
     timeline: "Aug 2024 - Dec 2024",
     title: "Core Computing Systems & Project Management",
     description:
-      "Gained a strong foundation in database design, theoretical computation, operating systems, and network security . Chose Software Project Management to understand project lifecycles, scheduling, and agile tracking methodologies .",
+      "Third Year SGPA: 8.83. Gained a strong foundation in database design, theoretical computation, operating systems, and network security. Chose Software Project Management to understand project lifecycles, scheduling, and agile tracking methodologies.",
     subjects: [
       "Database Management Systems",
       "Theory of Computation",
-      "Systems Programming & OS",
+      "Systems Programming & Operating Systems",
       "Computer Networks & Security",
       "Software Project Management",
+      "Laboratory Practice I",
+      "Seminar and Technical Communication",
+      "Cyber Security",
     ],
   },
   {
@@ -77,17 +223,41 @@ const semestersData = [
     term: "Semester 4",
     status: "Completed",
     statusColor: "var(--accent)",
-    cgpa: "7.55 (One Backlog)",
+    cgpa: "8.32",
     timeline: "Jan 2024 - May 2024",
     title: "Algorithms, Software Engineering & Microprocessors",
     description:
-      "Studied advanced algorithmic strategies, software engineering principles, and microprocessor architectures . Covered foundational programming paradigms and advanced mathematics .",
+      "Second Year SGPA: 8.32. Studied advanced algorithmic strategies, software engineering principles, and microprocessor architectures, alongside foundational programming language theory and applied mathematics.",
     subjects: [
-      "Mathematics III",
+      "Engineering Mathematics III",
       "Data Structures & Algorithms",
       "Software Engineering",
       "Microprocessor",
       "Principles of Programming Languages",
+      "Data Structures & Algorithms Lab",
+      "Microprocessor Laboratory",
+      "Project Based Learning II",
+    ],
+  },
+  {
+    id: 3,
+    term: "Semester 3",
+    status: "Completed",
+    statusColor: "var(--accent)",
+    cgpa: "8.32",
+    timeline: "Aug 2023 - Dec 2023",
+    title: "Data Structures, OOP & Digital Logic",
+    description:
+      "Second Year SGPA: 8.32. Built core computer engineering foundations in discrete mathematics, object-oriented programming, and digital logic design, with hands-on lab work in data structures and computer graphics.",
+    subjects: [
+      "Discrete Mathematics",
+      "Fundamentals of Data Structures",
+      "Object Oriented Programming",
+      "Computer Graphics",
+      "Digital Electronics & Logic Design",
+      "Data Structures Laboratory",
+      "OOP & Computer Graphics Lab",
+      "Business Communication Skills",
     ],
   },
   {
@@ -95,17 +265,17 @@ const semestersData = [
     term: "Semester 2",
     status: "Completed",
     statusColor: "var(--accent)",
-    cgpa: "7.55",
+    cgpa: "7.57",
     timeline: "Jan 2023 - May 2023",
     title: "Foundational Engineering & Mechanics",
     description:
-      "Explored advanced mathematics, applied chemistry, and classical mechanics. Developed visual communication skills through engineering graphics and applied theoretical knowledge in a collaborative Project Based Learning (PBL) environment.",
+      "First Year SGPA: 7.57. Explored applied physics, classical mechanics, and basic electronics. Developed visual communication skills through engineering graphics and applied theoretical knowledge in a collaborative Project Based Learning (PBL) environment.",
     subjects: [
-      "Engineering Mathematics-II",
-      "Engineering Chemistry",
+      "Engineering Mathematics II",
       "Engineering Mechanics",
-      "Basic Electronics Engineering",
       "Engineering Graphics",
+      "Basic Electronics Engineering",
+      "Engineering Physics",
       "Project Based Learning",
     ],
   },
@@ -114,16 +284,16 @@ const semestersData = [
     term: "Semester 1",
     status: "Completed",
     statusColor: "var(--accent)",
-    cgpa: "7.35",
+    cgpa: "7.32",
     timeline: "Aug 2022 - Dec 2022",
     title: "First Year Engineering Basics",
     description:
-      "Introduced to core engineering principles including calculus, applied physics, and mechanical systems. Gained foundational computational thinking and coding skills using Python, alongside hands-on manufacturing experience in workshop practice.",
+      "First Year SGPA: 7.57. Introduced to core engineering principles including calculus, applied chemistry, and electrical systems. Gained foundational computational thinking and coding skills through Programming & Problem Solving, alongside hands-on manufacturing experience in workshop practice.",
     subjects: [
-      "Engineering Mathematics-I",
-      "Engineering Physics",
+      "Engineering Mathematics I",
       "Systems in Mechanical Engineering",
       "Basic Electrical Engineering",
+      "Engineering Chemistry",
       "Programming & Problem Solving",
       "Workshop Practice",
     ],
@@ -131,6 +301,7 @@ const semestersData = [
 ];
 
 const Education = () => {
+  const [showResultModal, setShowResultModal] = useState(false);
   return (
     <main>
       {/* 1. HERO SECTION */}
@@ -155,18 +326,58 @@ const Education = () => {
           >
             Bachelor of Engineering in Computer Engineering
           </h1>
-          <p
-            className="m-0 text-muted max-w-[620px]"
-            style={{ fontSize: "clamp(16px, 1.8vw, 20px)", lineHeight: "1.6" }}
-          >
-            I am currently pursuing my degree at SGOI College of Engineering,
-            Pune, with an expected graduation in 2026 . My academic journey has
-            been a rigorous blend of theoretical computer science fundamentals
-            and practical software development. Through consistent academic
-            performance—maintaining an overall CGPA of 9.45—I have built a
-            strong foundation in data structures, algorithms, system
-            architecture, and modern full-stack development .
-          </p>
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+            <p
+              className="m-0 text-muted flex-1 max-w-[620px] md:max-w-none"
+              style={{
+                fontSize: "clamp(16px, 1.8vw, 20px)",
+                lineHeight: "1.6",
+              }}
+            >
+              I am currently pursuing my degree at SGOI College of Engineering,
+              Pune, with an expected graduation in 2026 . My academic journey
+              has been a rigorous blend of theoretical computer science
+              fundamentals and practical software development. Through
+              consistent academic performance—maintaining an overall CGPA of
+              9.45—I have built a strong foundation in data structures,
+              algorithms, system architecture, and modern full-stack development
+              .
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setShowResultModal(true)}
+              className="shrink-0 self-start"
+            >
+              <img
+                src="/results/image.png"
+                alt="Semester 8 Result - SPPU"
+                className="w-56 md:w-64 h-auto lg:translate-y-[-100px] shadow-2xl rounded-sm object-cover border border-hair-2 bg-bg cursor-pointer hover:opacity-90 transition-opacity"
+              />
+            </button>
+          </div>
+
+          {showResultModal && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+              onClick={() => setShowResultModal(false)}
+            >
+              <button
+                type="button"
+                onClick={() => setShowResultModal(false)}
+                className="absolute top-4 right-4 md:top-6 md:right-6 text-white text-2xl leading-none w-10 h-10 flex items-center justify-center rounded-full border border-white/30 hover:bg-white/10"
+                aria-label="Close"
+              >
+                ×
+              </button>
+              <img
+                src="/results/image.png"
+                alt="Semester 8 Result - full view"
+                className="max-w-full max-h-full object-contain rounded-sm shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </div>
+          )}
         </div>
       </section>
 
