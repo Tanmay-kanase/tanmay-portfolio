@@ -133,7 +133,7 @@ const Navbar = () => {
               className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted"
               style={{ color: "var(--muted)" }}
             >
-              Navi Mumbai | Pune
+              Pune | Mumbai
             </span>
 
             <button
