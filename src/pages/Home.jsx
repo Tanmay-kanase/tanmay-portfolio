@@ -1,3 +1,4 @@
+import ChatBot from "../components/ChatBot";
 import Hero from "../components/Hero";
 import MyLearn from "../components/MyLearn";
 
@@ -5,6 +6,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ChatBot />
       <MyLearn />
     </>
   );
