@@ -9,7 +9,7 @@ const GREETING =
 // NOTE: put your key in an env var, never hardcode it in shipped frontend code.
 // Vite: import.meta.env.VITE_GEMINI_API_KEY  |  CRA: process.env.REACT_APP_GEMINI_API_KEY
 const ai = new GoogleGenAI({
-  apiKey: import.meta.env.GEMINI_API,
+  apiKey: import.meta.env.VITE_GEMINI_API_KEY,
 });
 
 // --- tiny, dependency-free markdown renderer -------------------------
