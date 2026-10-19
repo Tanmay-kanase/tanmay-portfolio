@@ -35,11 +35,7 @@ const Hero = () => {
               className="m-0 mt-6 text-muted max-w-[560px]"
               style={{ fontSize: "clamp(16px, 1.2vw, 19px)", lineHeight: 1.6 }}
             >
-              BE Computer Engineering undergraduate with hands-on experience in
-              full-stack and backend development through academic projects,
-              internship experience, and professional training. Proficient in
-              Java, Spring Boot, React, REST APIs, and database management, with
-              a strong foundation in software development.
+              BE Computer Engineering Graduate (2026, CGPA 8.51) with practical experience in Java, J2EE, Spring Boot, React, MySQL and MongoDB gained through academic projects. I have built, deployed full-stack apps and enjoy debugging tricky backend problems and writing clean code.
             </p>
           </div>
 
